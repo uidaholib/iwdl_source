@@ -1,0 +1,29 @@
+# Jekyll Digital Collection Generator
+
+# Note: use environment variable on build command to include analytics
+# JEKYLL_ENV=production jekyll build
+
+# Site settings
+title: Idaho Waters Digital Library
+# Scientific and technical reports, with an emphasis on Idaho Water Resources Research Institute reports and publications
+description: "A collection of scientific and techincal reports relating to water issues in key Idaho river basins" 
+keywords: university of idaho, Idaho Water Resources Research Institute, Idaho, water resources
+email: ewilliamson@uidaho.edu
+
+# url variables
+url: https://www.lib.uidaho.edu
+baseurl: /digital/iwdl
+liburl: https://www.lib.uidaho.edu
+digurl: https://www.lib.uidaho.edu/digital
+repourl: https://digital.lib.uidaho.edu
+
+# page gen settings https://github.com/avillafiorita/jekyll-datapage_gen
+page_gen:
+  - data: 'iwdl'
+    template: 'document'
+    name: 'resource-identifier'
+    dir: 'docs'
+    extension: 'html'
+
+# data fields: 
+# title,creator,collection,location,lat-long,subject,description,date digital,date-original,date,format,digitization-specifications,iwrri-number,resource-identifier,rights-management,publisher,contributors,type,contributing-institution,metadata-cataloger,series,reference-url,cdm-number,cdm-file-name,full-resolution

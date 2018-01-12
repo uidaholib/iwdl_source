@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+{% include collection-banner.html %}
+{% include all-collections-nav.html %}
+{% include collection-nav.html %}
+
+<div class="page-content">
+    <div class="wrapper">
+        
+        <div class="letter-info">
+            <h2 id="letter-title">{{ page.title }}</h2>
+        </div>
+
+        <div class="letter">
+            <iframe src="https://digital.lib.uidaho.edu/cdm/pageflip/collection/idahowater/id/{{ page.cdm-number }}/type/singleitem/pftype/pdf"></iframe>
+        </div>
+        <div class="metadata">
+            <ul>
+                <li>{{ page.creator }}</li>
+                <li>{{ page.date }}</li>
+                <li>{{ page.description }}</li>
+                <li>{{ page.location }}</li>
+                <li>{{ page.subject }}</li>
+            </ul>
+        </div>
+
+        <div class="back-button">
+            <a href="{{ site.baseurl }}/">❮ Back to Archive Home</a>
+        </div>
+    </div>
+</div>
+{% include all-collections-js.html %}
