@@ -15,3 +15,12 @@ gen plug that takes csv and creates md stubs with elements as front matter
 
 make pages grouping based on controlled fields, collection, series 
 indexes by iwrri-number 
+
+Csv download option, Data section of about
+
+pdf embed options, https://pdfobject.com/static.html 
+
+show/hide description: 
+trucate, full on click hide trucate, show full.
+#overflowDiv { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+onclick remove hidden, nowrap

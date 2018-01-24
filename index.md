@@ -11,15 +11,6 @@ title: Home
 This table provides sorting and basic search of the archive contents. 
 Click on the "Read" link to see the full document.
 
-<style>
-    #columns {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-grow: 1;
-    margin: 0;
-}
-</style>
 <table id="doc-table" class="display">
     <thead>
         <tr>
