@@ -13,12 +13,17 @@ if thumbs have no extension, add using `for f in *; do mv "$f" "$f.jpg"; done`.
 CONTENTdm getfile utility:
 `/utils/getfile/collection/alias/id/pointer/filename/name`
 
+## CDM Pageview
+
+`<iframe src="https://digital.lib.uidaho.edu/cdm/pageflip/collection/idahowater/id/{{ page.cdm-number }}/type/singleitem/pftype/pdf"></iframe>`
 
 ## notes
 
+create csv mapping field to display name
+
 gen plug that takes csv and creates md stubs with elements as front matter
 
-{% assign fields = "title,creator,collection,location,lat-long,subject,description,date digital,date-original,date,format,digitization-specifications,iwrri-number,resource-identifier,rights-management,publisher,contributors,type,contributing-institution,metadata-cataloger,series,reference-url,cdm-number" | split: ',' %}
+{% assign fields = "title,creator,date-original,date,description,location,lat-long,subject,collection,series,iwrri-number,resource-identifier,rights-management,publisher,contributors,contributing-institution,format,type,metadata-cataloger,date-digital,reference-url" | split: ',' %}
 
 make pages grouping based on controlled fields, collection, series 
 indexes by iwrri-number 

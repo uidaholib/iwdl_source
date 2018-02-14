@@ -2,7 +2,7 @@
 # create custom metadata csv for download
 ---
 {%- assign items = site.data.iwdl -%}
-{%- assign fields = "title,creator,collection,location,lat-long,subject,description,date digital,date-original,date,format,iwrri-number,resource-identifier,rights-management,publisher,contributors,type,contributing-institution,metadata-cataloger,series,reference-url" | split: "," -%}
+{%- assign fields = "title,creator,date-original,date,description,location,lat-long,subject,collection,series,iwrri-number,resource-identifier,rights-management,publisher,contributors,contributing-institution,format,type,metadata-cataloger,date-digital,reference-url" | split: "," -%}
 {{ fields | join: "," }}
 {% for item in items %}{% for f in fields %}"{{ item[f] }}"{% if forloop.last != true %},{% endif %}{% endfor %}
 {% endfor %}

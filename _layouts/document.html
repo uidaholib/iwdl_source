@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+{%- assign fields = "title,creator,date-original,date,description,location,lat-long,subject,collection,series,iwrri-number,resource-identifier,rights-management,publisher,contributors,contributing-institution,format,type,metadata-cataloger,date-digital,reference-url" | split: "," -%}
 
 <div class="page-content">
     <div class="wrapper">
@@ -10,21 +11,16 @@ layout: default
         </div>
 
         <figure>
-            <img src="{{ site.baseurl }}/images/thumbs/{{ page.cdm-number }}.jpg" alt="pdf thumbnail" >
-            <figcaption></figcaption>
+            <a href="https://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/{{ page.cdm-number }}" class="pdf-link" target="_blank"><img src="{{ site.baseurl }}/images/thumbs/{{ page.cdm-number }}.jpg" alt="pdf thumbnail" ></a>
+            <figcaption><a href="https://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/{{ page.cdm-number }}" target="_blank" class="pdf-download" title="Document PDF - {{ page.title }}">Download PDF</a></figcaption>
         </figure>
 
-        <div class="letter">
-            <!--<iframe src="https://digital.lib.uidaho.edu/cdm/pageflip/collection/idahowater/id/{{ page.cdm-number }}/type/singleitem/pftype/pdf"></iframe>-->
-        </div>
         <div class="metadata">
+
+                <!--"title,creator,date-original,date,description,location,lat-long,subject,collection,series,iwrri-number,resource-identifier,rights-management,publisher,contributors,contributing-institution,format,type,metadata-cataloger,date-digital,reference-url"-->
             <ul>
-                <li>{{ page.creator }}</li>
-                <li>{{ page.date }}</li>
-                <li>{{ page.description }}</li>
-                <li>{{ page.location }}</li>
-                <li>{{ page.subject }}</li>
-                <li>{{ page.reference-url }}</li>
+                {% for f in fields %}{% if page[f] %}<li>{{ f }}: {{ page[f] }}</li>{% endif %}
+                {% endfor %}
             </ul>
         </div>
 
