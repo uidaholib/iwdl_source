@@ -2,19 +2,20 @@
 layout: default
 ---
 
-{% include collection-banner.html %}
-{% include all-collections-nav.html %}
-{% include collection-nav.html %}
-
 <div class="page-content">
     <div class="wrapper">
-        
+            
         <div class="letter-info">
             <h2 id="letter-title">{{ page.title }}</h2>
         </div>
 
+        <figure>
+            <img src="{{ site.baseurl }}/images/thumbs/{{ page.cdm-number }}.jpg" alt="pdf thumbnail" >
+            <figcaption></figcaption>
+        </figure>
+
         <div class="letter">
-            <iframe src="https://digital.lib.uidaho.edu/cdm/pageflip/collection/idahowater/id/{{ page.cdm-number }}/type/singleitem/pftype/pdf"></iframe>
+            <!--<iframe src="https://digital.lib.uidaho.edu/cdm/pageflip/collection/idahowater/id/{{ page.cdm-number }}/type/singleitem/pftype/pdf"></iframe>-->
         </div>
         <div class="metadata">
             <ul>
@@ -23,6 +24,7 @@ layout: default
                 <li>{{ page.description }}</li>
                 <li>{{ page.location }}</li>
                 <li>{{ page.subject }}</li>
+                <li>{{ page.reference-url }}</li>
             </ul>
         </div>
 
@@ -31,4 +33,3 @@ layout: default
         </div>
     </div>
 </div>
-{% include all-collections-js.html %}

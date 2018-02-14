@@ -1,13 +1,20 @@
-get the metadata first line *optional
 
-set array of metadata fields desired
-get length of array 
-for loop iterate over that length 
-access the metadata element by i 
+## Thumbs
 
-or if we know the correct index numbers, 
-iterate over the set of numbers 
+CONTENTdm get thumb utility:
+`/utils/getthumbnail/collection/alias/id/pointer`
 
+run jekyll to create thumbnail-fetch.txt in utilities. 
+use wget to harvest thumbs, `wget -i "thumbnail-fetch.txt"`.
+if thumbs have no extension, add using `for f in *; do mv "$f" "$f.jpg"; done`.
+
+## pdfs
+
+CONTENTdm getfile utility:
+`/utils/getfile/collection/alias/id/pointer/filename/name`
+
+
+## notes
 
 gen plug that takes csv and creates md stubs with elements as front matter
 

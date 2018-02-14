@@ -102,3 +102,12 @@
 <li><a href="https://www.lib.uidaho.edu/digital/webarchive/"><strong>Web</strong> Archive Collections</a></li>
 </ul>
 </div>
+<script>
+    /* all collections toggle */
+    function collectionsToggle() {
+        document.getElementById("collectionlist").style.display = (document.getElementById("collectionlist").style.display === "block") ? "none" : "block";
+    }
+    /* open + close all collections nav */
+    document.getElementById("collectionslink").onclick = function () { collectionsToggle(); };
+    document.getElementById("collectionslinkoff").onclick = function () { collectionsToggle(); };
+</script>
