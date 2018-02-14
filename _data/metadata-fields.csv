@@ -1,0 +1,22 @@
+field,display-name,featured
+title,Title,true
+creator,Author,true
+contributors,Contributors,true
+date-original,Date,true
+date,Sort Date,false
+description,Abstract,false
+location,Location,true
+lat-long,Lat-Long,true
+subject,Subjects,true
+collection,Collection,true
+series,Series,true
+iwrri-number,IWRRI number,true
+resource-identifier,Object ID,false
+rights-management,Rights,false
+publisher,Publisher,false
+contributing-institution,Contributing Institution,false
+format,Format,false
+type,Type,false
+metadata-cataloger,Cataloger,false
+date-digital,Date Digitized,false
+reference-url,Database URL,false

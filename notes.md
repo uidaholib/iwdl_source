@@ -13,7 +13,7 @@ if thumbs have no extension, add using `for f in *; do mv "$f" "$f.jpg"; done`.
 CONTENTdm getfile utility:
 `/utils/getfile/collection/alias/id/pointer/filename/name`
 
-## CDM Pageview
+## CDM Page flip view
 
 `<iframe src="https://digital.lib.uidaho.edu/cdm/pageflip/collection/idahowater/id/{{ page.cdm-number }}/type/singleitem/pftype/pdf"></iframe>`
 

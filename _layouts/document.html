@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- assign fields = "title,creator,date-original,date,description,location,lat-long,subject,collection,series,iwrri-number,resource-identifier,rights-management,publisher,contributors,contributing-institution,format,type,metadata-cataloger,date-digital,reference-url" | split: "," -%}
+{%- assign fields = site.display-fields | split: "," -%}
 
 <div class="page-content">
     <div class="wrapper">
