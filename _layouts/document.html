@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- assign fields = site.display-fields | split: "," -%}
+{%- assign fields = site.data.metadata-fields -%}
 
 <div class="page-content">
     <div class="wrapper">
@@ -19,9 +19,14 @@ layout: default
 
                 <!--"title,creator,date-original,date,description,location,lat-long,subject,collection,series,iwrri-number,resource-identifier,rights-management,publisher,contributors,contributing-institution,format,type,metadata-cataloger,date-digital,reference-url"-->
             <ul>
-                {% for f in fields %}{% if page[f] %}<li>{{ f }}: {{ page[f] }}</li>{% endif %}
+                {% for f in fields %}{% if page[f.field] %}<li>{{ f.display-name }}: {{ page[f.field] }}</li>{% endif %}
                 {% endfor %}
             </ul>
+        </div>
+
+        <div class="related">
+            <p>Related:</p>
+            <p>subjects, series, collection links</p>
         </div>
 
         <div class="back-button">

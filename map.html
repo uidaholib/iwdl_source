@@ -1,0 +1,77 @@
+---
+title: Map of Documents
+layout: page
+mapcenter: 45.67269023984288, -116.78261356184085
+zoom: 6
+---
+
+<!-- add collection map data -->
+<script>
+    var geodata = {
+        "type":"FeatureCollection",
+        "features":[
+            {% for item in site.data.iwdl %}{% if item.lat-long %}
+            {%- assign long-lat = item.lat-long | split: "," | reverse | join: "," -%}
+            {
+                "type":"Feature",
+                "properties":{
+                    "title":{{ item.title | jsonify }},
+                    "subject":{{ item.subject | jsonify}},
+                    "link":"{{ site.baseurl }}/docs/{{ item.resource-identifier | downcase }}.html"
+                    },
+                "geometry":{
+                    "type":"Point",
+                    "coordinates":[{{ long-lat }}]
+                    }
+                }{% if forloop.last == false %}, {% endif %}{% endif %}{% endfor %}
+    ]};
+</script>
+
+<style>
+    #map { height: 650px; z-index: 98; }
+    .leaflet-popup-content img { max-width: 100%;}
+    .about-narrative { width: 100%; }
+</style>
+
+<div id="map"></div>
+<link rel="stylesheet" href="{{ "/css/leaflet.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/css/leaflet.fusesearch.css" | relative_url }}">
+<script src="{{ "/js/leaflet.js" | relative_url }}"></script>
+<script src="{{ "/js/fuse.min.js" | relative_url }}"></script>
+<script src="{{ "/js/leaflet.fusesearch.js" | relative_url }}"></script>
+
+<script>
+
+    /* init and set zoom */
+    var map = L.map('map').setView([{{page.mapcenter}}], {{page.zoom}});
+
+    /* load map layer */ 
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+    maxZoom: 24
+    }).addTo(map);
+
+    /* add search, https://github.com/naomap/leaflet-fusesearch */
+    var options = {
+        title: 'Search collections',
+        placeholder: 'Search collections...',
+        threshold: 0.35 // 1 = anything, 0 = exact match
+    };
+
+    var searchCtrl = L.control.fuseSearch(options);
+    searchCtrl.addTo(map);
+    searchCtrl.indexFeatures(geodata.features, ['title', 'subject']);
+
+    /* add geojson marker and popup */
+    L.geoJson(geodata, {
+        pointToLayer: function(feature,latlng){
+            var marker = L.marker(latlng);
+            marker.bindPopup('<h3>' + feature.properties.title + '</h3><p style="text-align:center;"><a target="_blank" style="border:none;" href="'+feature.properties.link+'" target="_blank">link</a><p>' + feature.properties.subject + '<br><br><a href="'+feature.properties.link+'">More ...</a>');
+            return marker;
+        }, 
+        onEachFeature: function (feature, layer) {
+            feature.layer = layer;
+        }
+    }).addTo(map);
+
+</script>

@@ -17,9 +17,20 @@ CONTENTdm getfile utility:
 
 `<iframe src="https://digital.lib.uidaho.edu/cdm/pageflip/collection/idahowater/id/{{ page.cdm-number }}/type/singleitem/pftype/pdf"></iframe>`
 
-## notes
+## metadata handling
+
+The data file `metadata-fields.csv` contains information for populating document pages and machine readable markup. 
+The "field" column matches the columns used in the collection metadata file. 
+The fields will be displayed in the given order.
+If the field should be displayed visually, give it a name in "display-name" (blanks will not be displayed).
+If the field should be visually highlighted, add true to "featured" column (false will be displayed only on an additional click).
+For machine markup, include a schema map value.
 
 create csv mapping field to display name
+
+## notes
+
+handle multiple lat-long: 47.49, -116.72; 47.47, -116.58 
 
 gen plug that takes csv and creates md stubs with elements as front matter
 
