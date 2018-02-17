@@ -11,6 +11,6 @@ This project would not have been possible without the grant support of the Unite
 
 ## About the metadata
 
-The full metadata can be downloaded here [IWDL Export]({{ "/export/iwdl-data.csv" | absolute_url }}).
+The full metadata can be downloaded here [IWDL Export]({{ "/export/iwdl-data.csv" | absolute_url }}), or a [geojson export]({{ "/export/iwdl-geodata.json" | absolute_url }}).
 
 "title,creator,date-original,date,description,location,lat-long,subject,collection,series,iwrri-number,resource-identifier,rights-management,publisher,contributors,contributing-institution,format,type,metadata-cataloger,date-digital,reference-url"

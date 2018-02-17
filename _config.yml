@@ -18,8 +18,7 @@ digurl: https://www.lib.uidaho.edu/digital
 repourl: https://digital.lib.uidaho.edu
 
 # collection display variables 
-# these metadata fields will be displayed on item pages, in the given order
-display-fields: "title,creator,date-original,date,description,location,lat-long,subject,collection,series,iwrri-number,resource-identifier,rights-management,publisher,contributors,contributing-institution,format,type,metadata-cataloger,date-digital,reference-url"
+# see _data/metadata-fields.csv
 
 # page gen settings https://github.com/avillafiorita/jekyll-datapage_gen
 page_gen:
