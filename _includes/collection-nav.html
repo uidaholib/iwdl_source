@@ -13,9 +13,10 @@
 
             <div class="trigger">
                 <div class="col-md-8 col-sm-12" style="whitespace:nowrap;">
-                    <a class="page-link {% if page.url == "/" %} active{% endif %}" href="{{ site.baseurl }}/" id="homehash" >Home</a>
-                    <a class="page-link {% if page.url == "/about.html" %} active{% endif %}" href="{{ site.baseurl }}/about.html" id="abouthash">About</a>
+                    <a class="page-link {% if page.url == "/" %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+                    <a class="page-link {% if page.url == "/docs/" %} active{% endif %}" href="{{ site.baseurl }}/docs/">Documents</a>
                     <a class="page-link {% if page.url == "/map.html" %} active{% endif %}" href="{{ site.baseurl }}/map.html">Locations</a>
+                    <a class="page-link {% if page.url == "/about.html" %} active{% endif %}" href="{{ site.baseurl }}/about.html">About</a>
                     {% if page.url == "/search.html" %}<a class="page-link active" href="{{ site.baseurl }}/search.html" >Search</a>{% endif %}
                 </div>
                 

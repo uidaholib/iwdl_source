@@ -5,6 +5,11 @@ layout: default
 
 <div class="page-content">
     <div class="wrapper">
+        <ul>
+            <li><a href="{{ "/" | absolute_url }}">IWDL</a></li>
+            <li><a href="{{ "/docs/" | absolute_url }}">Documents</a></li>
+            <li>{{ page.title | truncatewords: 5 }}...</li>
+        </ul>
             
         <div class="letter-info">
             <h2 id="letter-title">{{ page.title }}</h2>
@@ -30,7 +35,7 @@ layout: default
         </div>
 
         <div class="back-button">
-            <a href="{{ site.baseurl }}/">❮ Back to Archive Home</a>
+            <a href="{{ site.baseurl }}/docs/">❮ Back to IWDL Documents</a>
         </div>
     </div>
 </div>
