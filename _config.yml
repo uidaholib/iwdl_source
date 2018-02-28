@@ -23,7 +23,7 @@ repourl: https://digital.lib.uidaho.edu
 # page gen settings https://github.com/avillafiorita/jekyll-datapage_gen
 page_gen:
   - data: 'iwdl'
-    template: 'document'
+    template: 'docs'
     name: 'resource-identifier'
     dir: 'docs'
     extension: 'html'
