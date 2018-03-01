@@ -5,7 +5,7 @@ layout: default
 
 <div class="page-content">
     <div class="wrapper">
-        <ul>
+        <ul class="breadcrumb">
             <li><a href="{{ "/" | absolute_url }}">IWDL</a></li>
             <li><a href="{{ "/docs/" | absolute_url }}">Documents</a></li>
             <li>{{ page.title | truncatewords: 5 }}...</li>
@@ -15,10 +15,15 @@ layout: default
             <h2 id="letter-title">{{ page.title }}</h2>
         </div>
 
+<div class="row">
+<div class="col-md-3  col-sm-12">
         <figure>
             <a href="https://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/{{ page.cdm-number }}" class="pdf-link" target="_blank"><img src="{{ site.baseurl }}/images/thumbs/{{ page.cdm-number }}.jpg" alt="pdf thumbnail" ></a>
             <figcaption><a href="https://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/{{ page.cdm-number }}" target="_blank" class="pdf-download" title="Document PDF - {{ page.title }}">Download PDF</a></figcaption>
         </figure>
+
+</div>
+<div  class="col-md-9">
 
         <div class="metadata">
 
@@ -28,6 +33,8 @@ layout: default
                 {% endfor %}
             </ul>
         </div>
+</div> 
+</div>
 
         <div class="related">
             <p>Related:</p>
