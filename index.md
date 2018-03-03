@@ -2,48 +2,16 @@
 layout: page
 title: Home
 ---
-{% assign items = site.data.iwdl %}
 
-<link href="{{ site.baseurl }}/css/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+# {{ site.title }}
 
-## Browse IWDL
+The Idaho Waters Digital Library provides open digital access to unique information resources relating to water issues in key Idaho river basins. 
+The collection includes scientific and technical reports, with an emphasis on [Idaho Water Resources Research Institute](http://www.uidaho.edu/research/entities/iwrri) publications.
+[Documents]({{ "/docs/" | relative_url }}) can be browsed by [Location]({{ "/map/" | relative_url }}), [Date]({{ "/timeline/" | relative_url }}), and [Subject Term]({{ "/subjects/" | relative_url }}).
+The database can also be queried extensively using the [Table]({{ "/docs/" | relative_url }}) feature.
 
-This table provides sorting and basic search of the archive contents. 
-Click on the "Read" link to see the full document.
+![pinecreek](images/pinecreek.jpg)
 
-<table id="doc-table" class="display">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Date</th>
-            <th>Subjects</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-{% for item in items %}        
-        <tr>
-            <td>{{ item.title }}</td>
-            <td>{{ item.date }}</td>
-            <td>{{ item.subject }}</td>
-            <td>{{ item.description | truncatewords: 40 }}... <a href="{{ site.baseurl }}/docs/{{ item.resource-identifier | downcase }}.html">Read</a></td>
-        </tr>
-{% endfor %}
-    </tbody>
-</table>
+The full descriptive metadata can be downloaded as a [CSV spreadsheet]({{ "/export/iwdl-data.csv" | absolute_url }}) or a [GeoJSON export]({{ "/export/iwdl-geodata.json" | absolute_url }}).
 
-<script src="{{ site.baseurl }}/js/vanilla-dataTables.min.js" type="text/javascript"></script>
-
-<script>
-    var dataTable = new DataTable("#doc-table", {
-        perPage: 20,
-        fixedColumns: true,
-        layout: {
-            top: "{info}{search}",
-            bottom: "{select}{pager}"
-        },
-        columns: [
-            { select: 1, sort: "asc" }
-        ]
-    });
-</script>
+This project would not have been possible without the grant support of the United States Geological Survey and the Idaho Water Resources Research Institute, the metadata and digitization work of Warren Bromley-Vogel and Karen Trebitz, and the ground work and continuing efforts of Jodi Haire.
