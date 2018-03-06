@@ -5,12 +5,13 @@ title: Home
 
 # {{ site.title }}
 
-The Idaho Waters Digital Library provides open digital access to unique information resources relating to water issues in key Idaho river basins. 
+The Idaho Waters Digital Library provides open digital access to unique information resources relating to water issues in key Idaho river basins.
+
+![pinecreek](images/pinecreek.jpg)
+
 The collection includes scientific and technical reports, with an emphasis on [Idaho Water Resources Research Institute](http://www.uidaho.edu/research/entities/iwrri) publications.
 [Documents]({{ "/docs/" | relative_url }}) can be browsed by [Location]({{ "/map/" | relative_url }}), [Date]({{ "/timeline/" | relative_url }}), and [Subject Term]({{ "/subjects/" | relative_url }}).
 The database can also be queried extensively using the [Table]({{ "/docs/" | relative_url }}) feature.
-
-![pinecreek](images/pinecreek.jpg)
 
 The full descriptive metadata can be downloaded as a [CSV spreadsheet]({{ "/export/iwdl-data.csv" | absolute_url }}) or a [GeoJSON export]({{ "/export/iwdl-geodata.json" | absolute_url }}).
 
