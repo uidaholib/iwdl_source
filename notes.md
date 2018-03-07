@@ -28,6 +28,12 @@ For machine markup, include a schema map value.
 
 create csv mapping field to display name
 
+## breadcrumbs
+
+document pages have schema.org markup for breadcrumbs, used by google to give context,
+
+https://developers.google.com/search/docs/data-types/breadcrumb
+
 ## notes
 
 handle multiple lat-long: 47.49, -116.72; 47.47, -116.58 
