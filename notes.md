@@ -36,8 +36,6 @@ https://developers.google.com/search/docs/data-types/breadcrumb
 
 ## notes
 
-handle multiple lat-long: 47.49, -116.72; 47.47, -116.58 
-
 gen plug that takes csv and creates md stubs with elements as front matter
 
 {% assign fields = "title,creator,date-original,date,description,location,lat-long,subject,collection,series,iwrri-number,resource-identifier,rights-management,publisher,contributors,contributing-institution,format,type,metadata-cataloger,date-digital,reference-url" | split: ',' %}

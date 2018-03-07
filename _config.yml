@@ -29,4 +29,4 @@ page_gen:
     extension: 'html'
 
 # data fields: 
-# title,creator,collection,location,lat-long,subject,description,date digital,date-original,date,format,digitization-specifications,iwrri-number,resource-identifier,rights-management,publisher,contributors,type,contributing-institution,metadata-cataloger,series,reference-url,cdm-number,cdm-file-name,full-resolution
+# title,creator,date,location,lat-long,subject,description,collection,series,related-dataset,contributors,publisher,contributing-institution,language,iwrri-number,resource-identifier,rights,rights-standardized,format,type,date-digital,digitization-specifications,metadata-cataloger,filename,cdm-number

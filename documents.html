@@ -26,10 +26,10 @@ Click on the "Read" link to see the full document.</p>
     <tbody>
 {% for item in items %}        
         <tr>
-            <td>{{ item.title }}</td>
+            <td><a href="{{ site.baseurl }}/docs/{{ item.resource-identifier | downcase }}.html">{{ item.title }}</a></td>
             <td>{{ item.date }}</td>
             <td>{{ item.subject }}</td>
-            <td>{{ item.description | truncatewords: 40 }}... <a href="{{ site.baseurl }}/docs/{{ item.resource-identifier | downcase }}.html">Read</a></td>
+            <td>{{ item.description | truncatewords: 15 }} <a href="{{ site.baseurl }}/docs/{{ item.resource-identifier | downcase }}.html">Read</a></td>
         </tr>
 {% endfor %}
     </tbody>

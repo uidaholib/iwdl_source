@@ -25,7 +25,7 @@ layout: default
         <ul class="breadcrumb">
                 <li><a href="{{ "/" | absolute_url }}">IWDL</a></li>
                 <li><a href="{{ "/docs/" | absolute_url }}">Documents</a></li>
-                <li>{{ page.title | truncatewords: 5 }}...</li>
+                <li>{{ page.title | truncatewords: 5 }}</li>
             </ul>
 
     <div class="wrapper">
@@ -45,8 +45,6 @@ layout: default
 <div  class="col-md-8">
 
         <div class="metadata">
-
-                <!--"title,creator,date-original,date,description,location,lat-long,subject,collection,series,iwrri-number,resource-identifier,rights-management,publisher,contributors,contributing-institution,format,type,metadata-cataloger,date-digital,reference-url"-->
             <ul>
                 {% for f in fields %}{% if page[f.field] %}<li><span class="field">{{ f.display-name }}:</span> <span class="field-value">{{ page[f.field] }}</span></li>{% endif %}
                 {% endfor %}

@@ -1,8 +1,8 @@
 field,display-name,featured
 title,Title,true
-creator,Author,true
+creator,Authors,true
 contributors,Contributors,true
-date,Date,false
+date,Date,true
 description,Abstract,false
 location,Location,true
 lat-long,Lat-Long,true
@@ -18,5 +18,3 @@ format,Format,false
 type,Type,false
 metadata-cataloger,Cataloger,false
 date-digital,Date Digitized,false
-reference-url,Database URL,false
-date-original,Date,true

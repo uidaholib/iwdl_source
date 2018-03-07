@@ -15,10 +15,10 @@
             "properties":{
                 "title": {{ item.title | jsonify }},
                 "creator": {{ item.creator | jsonify }},
-                "date": {{ item.date-original | jsonify }},
+                "date": {{ item.date | jsonify }},
                 "subject": {{ item.subject | jsonify}},
                 "identifier": {{ item.resource-identifier | jsonify }},
-                "link":"{{ site.baseurl }}/docs/{{ item.resource-identifier | downcase }}.html"
+                "link":"{{ site.url }}{{ site.baseurl }}/docs/{{ item.resource-identifier | downcase }}.html"
             }
         }{% if forloop.last == false %}, {% endif %}{% endif %}{% endfor %}
     ]
