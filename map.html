@@ -5,29 +5,30 @@ permalink: /map/
 mapcenter: 45.67269023984288, -116.78261356184085
 zoom: 6
 ---
-
+{%- assign items = site.data.iwdl -%}
 <style>
     #map { height: 650px; z-index: 98; }
     .leaflet-popup-content img { max-width: 100%;}
     .about-narrative { width: 100%; }
+    b { font-weight: bold; }
 </style>
 <link rel="stylesheet" href="{{ "/css/leaflet.css" | relative_url }}">
 <link rel="stylesheet" href="{{ "/css/leaflet.fusesearch.css" | relative_url }}">
-
-<!-- add collection map data -->
-<script>
-    var geodata = { "type": "FeatureCollection", "features": [ 
-{% for item in site.data.iwdl %}{% if item.lat-long %}
-{%- assign long-lat = item.lat-long | split: ";" | first | split: "," | reverse | join: "," -%}
-    { "type":"Feature", "geometry":{ "type":"Point", "coordinates":[{{ long-lat }}] }, "properties":{ "title": {{ item.title | jsonify }}, "creator": {{ item.creator | jsonify }}, "date": {{ item.date-original | jsonify }}, "subject": {{ item.subject | jsonify}}, "id": {{ item.resource-identifier | jsonify }} } }{% if forloop.last == false %}, {% endif %}{% endif %}{% endfor %}
-    ]};
-</script>
 
 <div id="map"></div>
 
 <script src="{{ "/js/leaflet.js" | relative_url }}"></script>
 <script src="{{ "/js/fuse.min.js" | relative_url }}"></script>
 <script src="{{ "/js/leaflet.fusesearch.js" | relative_url }}"></script>
+
+<!-- add collection map data -->
+<script>
+    var geodata = { "type": "FeatureCollection", "features": [ 
+{% for item in items %}{% if item.lat-long %}
+{%- assign long-lat = item.lat-long | split: ";" | first | split: "," | reverse | join: "," -%}
+    { "type":"Feature", "geometry":{ "type":"Point", "coordinates":[{{ long-lat }}] }, "properties":{ "title": {{ item.title | jsonify }}, "creator": {{ item.creator | jsonify }}, "date": {{ item.date | jsonify }}, "subject": {{ item.subject | jsonify}}, "id": {{ item.resource-identifier | jsonify }} } }{% if forloop.last == false %}, {% endif %}{% endif %}{% endfor %}
+    ]};
+</script>
 
 <script>
 
@@ -42,8 +43,8 @@ zoom: 6
 
     /* add search, https://github.com/naomap/leaflet-fusesearch */
     var options = {
-        title: 'Search collections',
-        placeholder: 'Search collections...',
+        title: 'Search documents',
+        placeholder: 'Search documents...',
         threshold: 0.35 // 1 = anything, 0 = exact match
     };
 
@@ -55,7 +56,7 @@ zoom: 6
     L.geoJson(geodata, {
         pointToLayer: function(feature,latlng){
             var marker = L.marker(latlng);
-            marker.bindPopup('<h3>' + feature.properties.title + '</h3><p>Authors: '+ feature.properties.creator + '<br>Date: ' + feature.properties.date + '<br>Subjects: ' + feature.properties.subject + '<br>Identifier: ' + feature.properties.id + '</p><p><a href="{{ site.baseurl }}/docs/'+feature.properties.id+'.html" >Document link</a><p>');
+            marker.bindPopup('<h3>' + feature.properties.title + '</h3><p>Authors: '+ feature.properties.creator + '<br>Date: ' + feature.properties.date + '<br>Subjects: ' + feature.properties.subject + '<br>Identifier: ' + feature.properties.id + '</p><h4><a href="{{ site.baseurl }}/docs/'+feature.properties.id+'.html" >View Document</a><h4>');
             return marker;
         }, 
         onEachFeature: function (feature, layer) {
