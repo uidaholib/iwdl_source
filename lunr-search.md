@@ -4,7 +4,7 @@ layout: page
 ---
 {%- assign items = site.data.iwdl -%}
 
-Basic search of *_drafts* notes full text using [Lunr.js](https://lunrjs.com/).
+Basic search of full metadata using [Lunr.js](https://lunrjs.com/).
 *May take a second to load!* 
 (p.s. or you can try [google cse]({{ "/search/google.html" | absolute_url }}))
 
