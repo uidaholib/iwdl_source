@@ -742,15 +742,12 @@ width:60%;}
 position:absolute;
 }
 
-/** /Google Map **/
-
-  /*  Tagcrowd Subject Cloud CSS */
-  .box5{
-    background: #fff; color:#000;
-   margin:0% auto;
-
-      margin-top:20px;
-   margin-bottom:30px;
+/*  Tagcrowd Subject Cloud CSS */
+.box5{
+  background: #fff; color:#000;
+  margin:0% auto;
+    margin-top:20px;
+  margin-bottom:30px;
 border:none;
 -webkit-border-radius: 15px;
 -moz-border-radius:15px;
@@ -760,17 +757,17 @@ padding:25px 10px 5px 10px;
   -webkit-box-shadow: 15px 15px 15px #333;
   box-shadow: 15px 15px 15px #333;
   width:90%;
-
   }
-
-    #htmltagcloud{line-height:2.0em;word-spacing:normal;letter-spacing:normal;text-transform:none;text-align:center;text-indent:0; -webkit-border-radius: 15px;
+#htmltagcloud{line-height:2.0em;word-spacing:normal;letter-spacing:normal;text-transform:none;text-align:center;text-indent:0; -webkit-border-radius: 15px;
 -moz-border-radius: 15px;
 border-radius: 15px;  }
-#htmltagcloud a:link{text-decoration:none;padding:2px;}#htmltagcloud a:visited{text-decoration:none}#htmltagcloud a:hover{color:white;background-color:#46E9B8; -webkit-border-radius: 15px;
+#htmltagcloud a:link{text-decoration:none;padding:2px;}
+#htmltagcloud a:visited{text-decoration:none}
+#htmltagcloud a:hover{color:white;background-color:#46E9B8; -webkit-border-radius: 15px;
 -moz-border-radius: 15px;
 border-radius: 15px; padding:2px;}
 #htmltagcloud a:active{color:white;background-color:#65BA85;}
-.wrd{padding:0;position:relative;}
+.wrd{padding:0 5px;display:inline-block;}
 .wrd a{text-decoration:none;}
 .tagcloud0{font-size:0.8em;color:#65BA85;z-index:10;}
 .tagcloud0 a{color:#65BA85;}

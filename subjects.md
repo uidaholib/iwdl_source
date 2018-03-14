@@ -20,7 +20,7 @@ permalink: /subjects/
 <div id="htmltagcloud" style="margin: 0px 30px 30px; background: none repeat scroll 0% 0% rgb(64, 82, 79); padding: 4px;"></div>
 
 <script>
-var subjectTerms = [ {%- for unique in uniqueSubjects -%}{%- assign count = 0 -%}{%- for c in subjects -%}{%- if c == unique -%}{%- assign count = count | plus: 1 -%}{%- endif -%}{%- endfor -%}{%- if count > 5 -%}{ "subject" : "{{ unique }}", "count" : {{ count }} }{% if forloop.last == false %}, {% endif %}{% endif %}{% endfor %} ];
+var subjectTerms = [ {%- for unique in uniqueSubjects -%}{%- assign count = 0 -%}{%- for c in subjects -%}{%- if c == unique -%}{%- assign count = count | plus: 1 -%}{%- endif -%}{%- endfor -%}{%- if count > 5 -%}{ "subject" : "{{ unique | capitalize }}", "count" : {{ count }} }{% if forloop.last == false %}, {% endif %}{% endif %}{% endfor %} ];
 var counts = subjectTerms.map(function(obj){ return obj.count; });
 var countMax = counts.reduce(function(a, b) {
     return Math.max(a, b);
@@ -48,7 +48,7 @@ function makeGrid(array) {
   var item;
   for (i = 0; i < array.length; i++) {
       var size = mapSize(array[i].count)
-      item = '<span class="wrd tagcloud' + size + '"><a target="_blank" href="https://digital.lib.uidaho.edu/cdm4/results.php?CISOOP1=exact&amp;CISOBOX1=' + array[i].subject + '&amp;CISOFIELD1=subjed&amp;CISOOP2=exact&amp;CISOBOX2=&amp;CISOFIELD2=creato&amp;CISOOP3=any&amp;CISOBOX3=&amp;CISOFIELD3=descri&amp;CISOOP4=none&amp;CISOBOX4=&amp;CISOFIELD4=CISOSEARCHALL&amp;CISOROOT=/idahowater&amp;t=s">' + array[i].subject + '</a></span>';
+      item = '<p class="wrd tagcloud' + size + '"><a target="_blank" href="https://digital.lib.uidaho.edu/cdm4/results.php?CISOOP1=exact&amp;CISOBOX1=' + array[i].subject + '&amp;CISOFIELD1=subjed&amp;CISOOP2=exact&amp;CISOBOX2=&amp;CISOFIELD2=creato&amp;CISOOP3=any&amp;CISOBOX3=&amp;CISOFIELD3=descri&amp;CISOOP4=none&amp;CISOBOX4=&amp;CISOFIELD4=CISOSEARCHALL&amp;CISOROOT=/idahowater&amp;t=s">' + array[i].subject + '</a></p>';
       cloud.innerHTML += item;
   }
   }
