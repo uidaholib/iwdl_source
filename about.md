@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+<div markdown="1" class="about-narrative">
+
 # About {{ site.title }}
 
 The Idaho Waters Digital Library (IWDL) provides open digital access to unique information resources relating to water issues in key Idaho river basins.
@@ -37,3 +39,5 @@ Phase two of the IWDL project opens access to regional water resource documents 
 The project seeks to increase the value and importance of the IWDL by aggregating the remaining IWRRI materials and improving user experience and discoverability. This will solidify the IWDL as a vital resource for researchers and scholars, supporting ongoing research and understanding of critical challenges in our region. Work on metadata and digital preservation will ensure continued long term access to the unique materials.
 
 The IWDL and two other UI Library digital collections are included in the Western Waters Digital Library (WWDL http://westernwaters.org/). WWDL aggregates unique materials related to water resources in the Western US improving and simplifying discovery for a diverse group of stakeholders. However, it does not build collections or digitize materials. WWDL and other aggregators rely on quality regional collections, such as IWDL, New Mexico Waters (http://econtent.unm.edu/cdm/landingpage/collection/NMWaters), or California Water Documents (http://ccdl.libraries.claremont.edu/cdm/landingpage/collection/cwd), to provide the content necessary for researchers.
+
+</div>
