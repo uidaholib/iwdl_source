@@ -5,17 +5,10 @@ permalink: /subjects/
 ---
 {%- comment -%} find all unique subjects used in the metadata {%- endcomment -%}
 
-{%- assign items = site.data.iwdl-complete -%}
-{%- assign subjects = "" | split: "," -%}
-{%- for item in items -%}
-	{%- assign isubs = item.subject | split: ";" -%}
-    {%- for s in isubs -%}
-        {%- assign ss = s | strip | downcase -%}
-        {%- assign subjects = subjects | push: ss -%}
-    {%- endfor -%}
-{%- endfor -%}
+{% assign raw-subjects = site.data.iwdl-complete | map: "subject" | join: ";" %}
+{% capture subjects %}{% assign subs = raw-subjects | split: ";" %}{% for s in subs %}{% if s != "" %}{{ s | strip | downcase }};{% endif %}{%- endfor -%}{% endcapture %}
+{% assign subjects = subjects | split: ";" %}
 {%- assign uniqueSubjects = subjects | uniq | sort -%}
-
 
 <div id="htmltagcloud" style="margin: 0px 30px 30px; background: none repeat scroll 0% 0% rgb(64, 82, 79); padding: 4px;"></div>
 
