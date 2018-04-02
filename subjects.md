@@ -4,16 +4,16 @@ title: Subjects
 permalink: /subjects/
 ---
 {%- comment -%} find all unique subjects used in the metadata {%- endcomment -%}
-
-{% assign raw-subjects = site.data.iwdl-complete | map: "subject" | join: ";" %}
-{% capture subjects %}{% assign subs = raw-subjects | split: ";" %}{% for s in subs %}{% if s != "" %}{{ s | strip | downcase }};{% endif %}{%- endfor -%}{% endcapture %}
-{% assign subjects = subjects | split: ";" %}
+{%- assign min-count = 0 -%}
+{%- assign raw-subjects = site.data.iwdl-complete | map: "subject" | join: ";" | split: ";" -%}
+{%- capture subjects -%}{% for s in raw-subjects %}{% if s != "" %}{{ s | strip | downcase }};{% endif %}{%- endfor -%}{%- endcapture -%}
+{%- assign subjects = subjects | split: ";" -%}
 {%- assign uniqueSubjects = subjects | uniq | sort -%}
 
 <div id="htmltagcloud" style="margin: 0px 30px 30px; background: none repeat scroll 0% 0% rgb(64, 82, 79); padding: 4px;"></div>
 
 <script>
-var subjectTerms = [ {%- for unique in uniqueSubjects -%}{%- assign count = 0 -%}{%- for c in subjects -%}{%- if c == unique -%}{%- assign count = count | plus: 1 -%}{%- endif -%}{%- endfor -%}{%- if count > 5 -%}{ "subject" : "{{ unique | capitalize }}", "count" : {{ count }} }{% if forloop.last == false %}, {% endif %}{% endif %}{% endfor %} ];
+var subjectTerms = [ {%- for unique in uniqueSubjects -%}{% assign count = subjects | where_exp: "item", "item == unique" | size %}{%- if count > min-count -%}{ "subject" : "{{ unique | capitalize }}", "count" : {{ count }} }{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %} ];
 var counts = subjectTerms.map(function(obj){ return obj.count; });
 var countMax = counts.reduce(function(a, b) {
     return Math.max(a, b);
