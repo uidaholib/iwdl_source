@@ -18,8 +18,8 @@
                 "date": {{ item.date | jsonify }},
                 "subject": {{ item.subject | jsonify}},
                 "identifier": {{ item.resource-identifier | jsonify }},
-                "link":"{{ site.url }}{{ site.baseurl }}/docs/{{ item.resource-identifier | downcase }}.html"
+                "link":"{{ "/docs/" | absolute_url }}{{ item.resource-identifier | downcase }}.html"
             }
-        }{% if forloop.last == false %}, {% endif %}{% endif %}{% endfor %}
+        }{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}
     ]
 }
