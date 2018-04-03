@@ -4,8 +4,8 @@ title: Subjects
 permalink: /subjects/
 ---
 {%- comment -%} find all unique subjects used in the metadata {%- endcomment -%}
-{%- assign min-count = 0 -%}
-{%- assign raw-subjects = site.data.iwdl-complete | map: "subject" | join: ";" | split: ";" -%}
+{%- assign min-count = 5 -%}
+{%- assign raw-subjects = site.data.iwdl | map: "subject" | join: ";" | split: ";" -%}
 {%- capture subjects -%}{% for s in raw-subjects %}{% if s != "" %}{{ s | strip | downcase }};{% endif %}{%- endfor -%}{%- endcapture -%}
 {%- assign subjects = subjects | split: ";" -%}
 {%- assign uniqueSubjects = subjects | uniq | sort -%}
@@ -37,7 +37,7 @@ function mapSize(x) {
 /* create cloud */
 function makeGrid(array) {
   var i;
-  shuffle(array);
+  //shuffle(array);
   var item;
   for (i = 0; i < array.length; i++) {
       var size = mapSize(array[i].count)
