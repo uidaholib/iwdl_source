@@ -1,8 +1,30 @@
 body {
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
     color: $text-color;
-    background: $background;
+    background: $background-color;
 }
+nav, footer {
+    background: $nav-background;
+}
+main {
+    background: $background-texture;
+    .container {
+        background: $background-color;
+    }
+}
+#title {
+    a { 
+        font-size: 32px;
+        font-weight: 300;
+        color: $text-color;
+    }
+    p {
+        font-size: 13.5px;
+    }
+ }
 /** Begin Collections Pull **/
 
 #collectionlist a{
