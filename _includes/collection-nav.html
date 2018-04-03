@@ -1,45 +1,40 @@
-<header class="site-header">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="wrapper row">
-
-        <nav class="site-nav">
-            <a href="#" class="menu-icon">
-                <svg viewBox="0 0 18 15">
-                    <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
-                    <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
-                    <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
-                </svg>
-            </a>
-
-            <div class="trigger">
-                <div class="col-md-8 col-sm-12" style="whitespace:nowrap;">
-                    <a class="page-link {% if page.url == "/" %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
-                    <a class="page-link {% if page.url contains "/docs/" %} active{% endif %}" href="{{ site.baseurl }}/docs/">Documents</a>
-                    <a class="page-link {% if page.url == "/map/" %} active{% endif %}" href="{{ site.baseurl }}/map/">Locations</a>
-                    <a class="page-link {% if page.url == "/subjects/" %} active{% endif %}" href="{{ site.baseurl }}/subjects/">Subjects</a>
-                    <a class="page-link {% if page.url == "/timeline/" %} active{% endif %}" href="{{ site.baseurl }}/timeline/">Timeline</a>
-                    <a class="page-link {% if page.url == "/about/" %} active{% endif %}" href="{{ site.baseurl }}/about/">About</a>
-                    <a class="page-link" href="https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/">Database</a>
-                    {% if page.url == "/search/" %}<a class="page-link active" href="{{ site.baseurl }}/search/" >Search</a>{% endif %}
-                </div>
-                
-                <div class="col-md-4 pull-right">
-                   <script>
-                        function google_search() {
-                            var query = document.getElementById("google-search").value;
-                            window.open("{{ '/search/index.html' | absolute_url }}?q=" + query, "_self" );
-                        }
-                    </script>
-                    {% if page.url != "/search.html" %}
-                    <form class="searchall" role="search" id="search" onsubmit="google_search(); return false;">
-                            <input type="text" size="15" id="google-search" placeholder="Google search..." aria-label="Google site search">
-                            <input class="button-all" type="submit" value=" Search ">
-                    </form> {% endif %}
-                </div>
-
-            </div>
-        </nav>
-
-    </div>
-
-</header>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% if page.url == "/" %} active{% endif %}">
+                    <a class="nav-link" href="{{ "/" | relative_url }}">Home</a>
+                </li>
+                <li class="nav-item {% if page.url == "/browse/" %} active{% endif %}">
+                    <a class="nav-link" href="{{ "/browse/" | relative_url }}">Browse</a>
+                </li>
+                <li class="nav-item {% if page.url == "/map/" %} active{% endif %}">
+                    <a class="nav-link" href="{{ "/map/" | relative_url }}">Map</a>
+                </li>
+                <li class="nav-item {% if page.url == "/subjects/" %} active{% endif %}">
+                    <a class="nav-link" href="{{ "/subjects/" | relative_url }}">Subjects</a>
+                </li>
+                <li class="nav-item {% if page.url == "/about/" %} active{% endif %}">
+                    <a class="nav-link" href="{{ "/about/" | relative_url }}">About</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/">Database</a>
+                </li>
+            </ul>
+            <script>
+                function google_search() {
+                    var query = document.getElementById("google-search").value;
+                    window.open("{{ '/search/index.html' | absolute_url }}?q=" + query, "_self" );
+                }
+            </script>
+            <form class="form-inline my-2 my-lg-0" role="search" id="search" onsubmit="google_search(); return false;">
+                <input id="google-search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>    
+</nav>

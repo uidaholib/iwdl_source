@@ -7,8 +7,12 @@
   <body>
     {% include collection-banner.html %}
     {% include collection-nav.html %}
-    {{ content }}
+    <main role="main">
+      {{ content }}
+    </main>
     {% include all-collections-nav.html %}
+    {% include footer.html %}
+    {% include foot.html %}
   </body>
 
 </html>
