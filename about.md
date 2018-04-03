@@ -4,7 +4,9 @@ title: About
 permalink: /about/
 ---
 
-<div markdown="1" class="about-narrative">
+<div markdown="1" class="row">
+
+<div markdown="1" class="col-md-8">
 
 # About {{ site.title }}
 
@@ -32,4 +34,15 @@ WWDL aggregates unique materials related to water resources in the Western US im
 However, it does not build collections or digitize materials. 
 WWDL and other aggregators rely on quality regional collections, such as IWDL, [New Mexico Waters](http://econtent.unm.edu/cdm/landingpage/collection/NMWaters), or [California Water Documents](http://ccdl.libraries.claremont.edu/cdm/landingpage/collection/cwd), to provide the content necessary for researchers.
 
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-body">
+<h3>Acknowledgements</h3>
+<p class="text-center"><a href="https://www.lib.uidaho.edu/"><img class="img-fluid rounded" src="{{ "/images/UI_Library_horizontal_4c.png" | relative_url }}" alt="UIdaho Library Logo"></a></p>
+<p class="text-center"><a href="https://www.usgs.gov/"><img class="img-fluid rounded" src="{{ "/images/USGS_logo.png" | relative_url }}" alt="USGS Logo"></a></p>
+<p class="text-center"><a href="http://www.uidaho.edu/research/entities/iwrri"><img class="img-fluid rounded" src="{{ "/images/iwrri-logo.JPG" | relative_url }}" alt="IWRRI Logo" style="max-width: 50%;"></a></p>
+</div>
+</div>
+</div>
 </div>
