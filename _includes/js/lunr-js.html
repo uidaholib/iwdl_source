@@ -19,7 +19,7 @@ var idx = lunr(function () {
   this.field('abstract')
   this.ref('id')
 
-  this.pipeline.remove(lunr.trimmer)
+  //this.pipeline.remove(lunr.trimmer)
 
   for (var item in store) {
     this.add({
@@ -35,7 +35,7 @@ $(document).ready(function() {
   $('input#search').on('keyup', function () {
     var resultdiv = $('#results');
     var query = $(this).val().toLowerCase();
-    var result =
+    /*var result =
       idx.query(function (q) {
         query.split(lunr.tokenizer.separator).forEach(function (term) {
           q.term(term, { boost: 100 })
@@ -46,7 +46,8 @@ $(document).ready(function() {
             q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
           }
         })
-      });
+      });*/
+    var result = idx.search(query); 
     resultdiv.empty();
     resultdiv.prepend('<p class="results__found">'+result.length+' Result(s) found</p>');
     for (var item in result) {
