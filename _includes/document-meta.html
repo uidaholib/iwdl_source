@@ -4,13 +4,13 @@
 <!-- DC meta -->
 <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
 <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
-<meta name="DC.title" content="{{ page.title }}" xml:lang="en" />
-<meta name="DC.creator" content="{{ page.creator }}" xml:lang="en" />
-<meta name="DCTERMS.created" content="{{ page.date }}" xml:lang="en" scheme="DCTERMS.W3CDTF" />
-<meta name="DC.description" content="{{ page.description }}" xml:lang="en" />
-{% assign subs = page.subject | split: ";" %}{% for s in subs %}<meta name="DC.subject" content="{{ s | strip }}" xml:lang="en" />
+<meta name="DC.title" content="{{ page.title | xml_escape }}" xml:lang="en" />
+<meta name="DC.creator" content="{{ page.creator | xml_escape }}" xml:lang="en" />
+<meta name="DCTERMS.created" content="{{ page.date | xml_escape }}" xml:lang="en" scheme="DCTERMS.W3CDTF" />
+<meta name="DC.description" content="{{ page.description | xml_escape  }}" xml:lang="en" />
+{% assign subs = page.subject | split: ";" %}{% for s in subs %}<meta name="DC.subject" content="{{ s | strip | xml_escape }}" xml:lang="en" />
 {% endfor %}
-<meta name="DC.type" content="{{ page.type }}" xml:lang="en" />
+<meta name="DC.type" content="{{ page.type | xml_escape }}" xml:lang="en" />
 <!-- Open Graph meta -->
 <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
 <meta property="og:type" content="article" />
