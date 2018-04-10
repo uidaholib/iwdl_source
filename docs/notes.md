@@ -3,6 +3,19 @@ check item 201101supp, is xls
 iwdl/objects/ pdfs
 iwdl/images/sm thumbs
 
+- narrower banner area
+- lighter grey nav
+- larger nav font, darker color
+- active nav, underline, different color, red?
+
+a {
+    color: rgb(176, 96, 72);
+    text-decoration: none;
+}
+
+- set up datatables load data
+- datatables api
+
 ## Thumbs
 
 CONTENTdm get thumb utility:
