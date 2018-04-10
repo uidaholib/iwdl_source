@@ -1,3 +1,7 @@
+check item 201101supp, is xls 
+
+iwdl/objects/ pdfs
+iwdl/images/sm thumbs
 
 ## Thumbs
 
@@ -11,7 +15,20 @@ if thumbs have no extension, add using `for f in *; do mv "$f" "$f.jpg"; done`.
 ## pdfs
 
 CONTENTdm getfile utility:
-`/utils/getfile/collection/alias/id/pointer/filename/name`
+`/utils/getfile/collection/<alias>/id/<pointer>/filename/<name>`
+
+example, `http://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/784/filename/784.pdf`
+
+Note: `filename/<name>` is optional, and name can be arbitrarily set as long as the extension is correct.
+
+## Item images 
+
+IWDL images for item pages:
+- 800px height 
+- file name is based on resource ID
+
+Created from PDFs using ImageMagick ([setup instructions](https://evanwill.github.io/_drafts/notes/imagemagick.html)).
+Using command `for f in *.pdf; do magick -density 500 "$f"[0] -resize x800 -flatten "${f%.pdf}.jpg"; done`
 
 ## CDM Page flip view
 
