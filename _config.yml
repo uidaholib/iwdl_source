@@ -18,6 +18,10 @@ liburl: https://www.lib.uidaho.edu
 digurl: https://www.lib.uidaho.edu/digital
 repourl: https://digital.lib.uidaho.edu
 
+# Dev variables: 
+# choose metadata set, i.e. easily switch between full or dev version
+metadata: iwdl-dev
+
 # collection display variables 
 # see _data/metadata-fields.csv
 

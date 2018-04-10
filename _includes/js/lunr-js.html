@@ -1,4 +1,4 @@
-{%- assign items = site.data.iwdl -%}
+{%- assign items = site.data[site.metadata] -%}
 <script src="{{ "/assets/js/lunr.min.js" | relative_url }}"></script>
 <script>
 /* create lunr store */

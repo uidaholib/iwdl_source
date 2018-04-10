@@ -3,7 +3,7 @@ layout: table
 title: Browse Documents
 permalink: /browse/
 ---
-{% assign items = site.data.iwdl %}
+{% assign items = site.data[site.metadata] %}
 
 ## Browse IWDL
 

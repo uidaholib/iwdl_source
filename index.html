@@ -16,7 +16,7 @@ title: Home
         </div>
     </div>
 </div>
-{%- assign items = site.data.iwdl -%}
+{%- assign items = site.data[site.metadata] -%}
 {%- assign raw-dates = items | map: 'date' -%}
 {% capture clean-dates %}{% for date in raw-dates %}{% if date != "" %}{% if date contains "-" %}{{date | split: "-" | first }}{% elsif date contains "/" %}{{ date | split: "/" | last }}{% else %}{{ date }}{% endif %}{% unless forloop.last %};{% endunless %}{% endif %}{%- endfor -%}{% endcapture %}
 {%- assign date-range = clean-dates | split: ";" | sort  -%}
