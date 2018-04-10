@@ -12,6 +12,8 @@ run jekyll to create thumbnail-fetch.txt in utilities.
 use wget to harvest thumbs, `wget -i "thumbnail-fetch.txt"`.
 if thumbs have no extension, add using `for f in *; do mv "$f" "$f.jpg"; done`.
 
+These thumbs are very small...
+
 ## pdfs
 
 CONTENTdm getfile utility:
@@ -21,14 +23,18 @@ example, `http://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/7
 
 Note: `filename/<name>` is optional, and name can be arbitrarily set as long as the extension is correct.
 
+run jekyll to create `pdf-fetch.txt` in utilities. 
+use wget to harvest pdfs, `wget -i "pdf-fetch.txt"`.
+this downloads all PDFs in the metadata, setting the file name to the "resource-identifier".
+
 ## Item images 
 
 IWDL images for item pages:
 - 800px height 
-- file name is based on resource ID
+- file name is based on "resource-identifier"
 
-Created from PDFs using ImageMagick ([setup instructions](https://evanwill.github.io/_drafts/notes/imagemagick.html)).
-Using command `for f in *.pdf; do magick -density 500 "$f"[0] -resize x800 -flatten "${f%.pdf}.jpg"; done`
+Create images from PDFs using ImageMagick ([setup instructions](https://evanwill.github.io/_drafts/notes/imagemagick.html)).
+Use command `for f in *.pdf; do magick -density 500 "$f"[0] -resize x800 -flatten "${f%.pdf}.jpg"; done`
 
 ## CDM Page flip view
 

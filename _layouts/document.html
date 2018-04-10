@@ -27,16 +27,17 @@ layout: default
     </ul>
 
     <div class="">
-        <!--<h2 id="item-title" class="">{{ page.title }}</h2>-->
+
     </div>
 
     <div class="row">
         <div class="col-md-4" >
             <div id="item-image">
-                <img src="{{ site.baseurl }}/images/thumbs/{{ page.cdm-number }}.jpg" alt="pdf thumbnail" >
+                <!--<img src="{{ site.baseurl }}/images/thumbs/{{ page.cdm-number }}.jpg" alt="pdf thumbnail" >-->
+                <img src="https://www.lib.uidaho.edu/digital/iwdl/images/sm/{{ page.resource-identifier }}-sm.jpg" alt="pdf thumbnail" class="img-thumbnail img-responsive">
             </div>
-            <div id="item-link" class="text-center">
-                <a href="https://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/{{ page.cdm-number }}" target="_blank" class="btn btn-primary" title="PDF download">Download PDF</a>
+            <div id="item-link" class="text-center mt-2">
+                <a href="https://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/{{ page.cdm-number }}/filename/{{ page.resource-identifier }}.pdf" target="_blank" class="btn btn-primary" title="PDF download">Download PDF</a>
             </div>
         </div>
         <div class="col-md-8">

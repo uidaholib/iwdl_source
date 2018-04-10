@@ -11,7 +11,7 @@ This table provides sorting and basic search of the archive contents.
 Click on the "Read" link to see the full document.
 
 <div class="table-responsive-md">
-<table id="item-table" class="table table-striped table-hover">
+<table id="item-table" class="table table-striped">
     <thead>
         <tr>
             <th scope="col">Title</th>
