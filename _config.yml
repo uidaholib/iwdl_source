@@ -20,6 +20,7 @@ repourl: https://digital.lib.uidaho.edu
 
 # Dev variables: 
 # choose metadata set, i.e. easily switch between full or dev version
+# be sure to also change page_gen data setting!
 metadata: iwdl-dev
 
 # collection display variables 
@@ -27,7 +28,7 @@ metadata: iwdl-dev
 
 # page gen settings https://github.com/avillafiorita/jekyll-datapage_gen
 page_gen:
-  - data: 'iwdl'
+  - data: 'iwdl-dev'
     template: 'docs'
     name: 'resource-identifier'
     dir: 'docs'
