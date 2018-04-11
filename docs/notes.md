@@ -1,4 +1,7 @@
 check item 201101supp, is xls 
+cdm 277, iwdl-sonneville_1974 huge file, won't download.
+
+diff files ls and metadata to discover missing
 
 iwdl/objects/ pdfs
 iwdl/images/sm thumbs
@@ -9,7 +12,7 @@ iwdl/images/sm thumbs
 - active nav, underline, different color, red?
 
 a {
-    color: rgb(176, 96, 72);
+    color: #b06048;
     text-decoration: none;
 }
 
@@ -37,7 +40,7 @@ example, `http://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/7
 Note: `filename/<name>` is optional, and name can be arbitrarily set as long as the extension is correct.
 
 run jekyll to create `pdf-fetch.txt` in utilities. 
-use wget to harvest pdfs, `wget -i "pdf-fetch.txt"`.
+use wget to harvest pdfs, `wget --wait=3 --random-wait -i "pdf-fetch.txt"`.
 this downloads all PDFs in the metadata, setting the file name to the "resource-identifier".
 
 ## Item images 
