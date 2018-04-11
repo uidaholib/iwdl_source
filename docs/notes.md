@@ -11,13 +11,10 @@ iwdl/images/sm thumbs
 - larger nav font, darker color
 - active nav, underline, different color, red?
 
-a {
-    color: #b06048;
-    text-decoration: none;
-}
-
 - set up datatables load data
 - datatables api
+
+all collections a modal around di logo 
 
 ## Thumbs
 

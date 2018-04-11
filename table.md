@@ -21,12 +21,12 @@ Click on the "Read" link to see the full document.
         </tr>
     </thead>
     <tbody>
-{% for item in items %}        
+{% for item in items %}
         <tr>
-            <td scope="row"><a href="{{ site.baseurl }}/docs/{{ item.resource-identifier | downcase }}.html">{{ item.title }}</a></td>
+            <td scope="row"><a href="{{ "/docs/" | absolute_url | append: item.resource-identifier | append: ".html" }}">{{ item.title }}</a></td>
             <td>{{ item.date }}</td>
             <td>{{ item.subject }}</td>
-            <td>{{ item.description | truncatewords: 15 }} <a href="{{ site.baseurl }}/docs/{{ item.resource-identifier | downcase }}.html">Read</a></td>
+            <td>{{ item.description | truncatewords: 15 }}</td>
         </tr>
 {% endfor %}
     </tbody>
