@@ -1,9 +1,15 @@
+<!-- All collections modal -->
+<div class="modal fade" id="collections" tabindex="-1" role="dialog" aria-labelledby="digital" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="digital"><a href="https://www.lib.uidaho.edu/digital/">UIdaho Digital Initiatives</a></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
 
-<p id="collectionslink">All Collections</p>
-
-<div id="collectionlist" style="x-overflow:hidden;">
-<p id="collectionslinkoff">X</p>
-<br>
 <div class="searchall_drop" style="">
 <form action="https://digital.lib.uidaho.edu/cdm4/results.php" method="get">
 <input type="hidden" value="all" name="CISOOP1">
@@ -102,12 +108,7 @@
 <li><a href="https://www.lib.uidaho.edu/digital/webarchive/"><strong>Web</strong> Archive Collections</a></li>
 </ul>
 </div>
-<script>
-    /* all collections toggle */
-    function collectionsToggle() {
-        document.getElementById("collectionlist").style.display = (document.getElementById("collectionlist").style.display === "block") ? "none" : "block";
-    }
-    /* open + close all collections nav */
-    document.getElementById("collectionslink").onclick = function () { collectionsToggle(); };
-    document.getElementById("collectionslinkoff").onclick = function () { collectionsToggle(); };
-</script>
+
+</div>
+</div>
+</div>

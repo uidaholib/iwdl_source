@@ -1,17 +1,14 @@
 <nav class="navbar navbar-expand-md navbar-light ">
     <div class="container">
-        <a class="navbar-brand {% if page.url == "/" %} active{% endif %}" href="{{ "/" | relative_url }}">IWDL</a>
+        <a class="navbar-brand {% if page.url == "/" %} active{% endif %} p-0" href="{{ "/" | relative_url }}"><img src="{{ "/images/iwdl-logo.png" | relative_url }}" class="img-fluid" style="max-height:45px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#page-nav" aria-controls="page-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="page-nav">
             <ul class="navbar-nav mr-auto">
-                <!--<li class="nav-item {% if page.url == "/" %} active{% endif %}">
-                    <a class="nav-link" href="{{ "/" | relative_url }}">Home</a>
-                </li>-->
                 <li class="nav-item {% if page.url == "/browse/" %} active{% endif %}">
-                    <a class="nav-link" href="{{ "/browse/" | relative_url }}">Browse</a>
+                    <a class="nav-link" href="{{ "/browse/" | relative_url }}">Documents</a>
                 </li>
                 <li class="nav-item {% if page.url == "/map/" %} active{% endif %}">
                     <a class="nav-link" href="{{ "/map/" | relative_url }}">Map</a>
