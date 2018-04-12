@@ -1,49 +1,29 @@
 ## Problems
 
-bad pdf 
-
-iwdl-199004.pdf	1
-iwdl-199602.pdf	1
-iwdl-allen_1979.pdf	1
-iwdl-gladwell_1975.pdf	1
-iwdl-gladwell_1978.pdf	1
-iwdl-gladwell6_1979.pdf	1
-iwdl-gladwell8_1979.pdf	1
-
 PDF problems
 
-iwdl-1897_russell_a_reconnoissance_in_southeastern_wa	1
-iwdl-1965_ross_contributions_to_geohydrology	1
-iwdl-1991_brown_sensitivity_analysis
-iwdl-caldwell_1974	1
-iwdl-cda_eisenbarth_1978	1
+iwdl-1897_russell_a_reconnoissance_in_southeastern_wa	*missing, bad digitization
+iwdl-1965_ross_contributions_to_geohydrology	*missing
+
+iwdl-gladwell6_1979.pdf	1
+iwdl-gladwell8_1979.pdf	1
 iwdl-gladwell10_1979	1
 iwdl-gladwell2_1979	1
 iwdl-gladwell7_1979	1
 iwdl-gladwell9_1979	1
-iwdl-holte_1973	1
-iwdl-sonneville_1974	1
-iwdl-warnick_1974	1
 
 ## notes 
 
 check item 201101supp, is xls 
 cdm 277, iwdl-sonneville_1974 huge file, won't download.
 
-diff files ls and metadata to discover missing
-
 iwdl/objects/ pdfs
 iwdl/images/sm thumbs
 
-- narrower banner area
-- lighter grey nav
-- larger nav font, darker color
 - active nav, underline, different color, red?
 
 - set up datatables load data
-- datatables api
-
-all collections a modal around di logo 
+- datatables api 
 
 ## Thumbs
 
