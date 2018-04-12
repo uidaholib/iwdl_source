@@ -3,10 +3,10 @@ title,Title,DC.title
 creator,Authors,DC.creator
 contributors,Contributors,
 date,Date,DCTERMS.created
+subject,Subjects,DC.subject
 description,Abstract,DC.description
 location,Location,
 lat-long,Lat-Long,
-subject,Subjects,DC.subject
 collection,Collection,
 series,Series,
 iwrri-number,IWRRI number,
