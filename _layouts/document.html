@@ -43,20 +43,19 @@ layout: default
         <div class="col-md-8">
             <div id="item-metadata" class="metadata">
 
-                {% for f in fields %}{% if page[f.field] %}<p><span class="field">{{ f.display-name }}:</span> <span class="field-value">{{ page[f.field] }}</span></p>{% endif %}
-                {% endfor %}
+                {% for f in fields %}{% if page[f.field] %}<p><span class="field">{{ f.display-name }}:</span><span class="field-value">
+                {% if f.field == "subject" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/{{ s | strip | url_param_escape }}/field/subjec/mode/all/conn/and/order/nosort" target="_blank">{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
+                {% elsif f.field == "collection" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/{{ s | strip | url_param_escape }}/field/collec/mode/all/conn/and/order/nosort" target="_blank">{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
+                {% elsif f.field == "series" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/{{ s | strip | url_param_escape }}/field/series/mode/all/conn/and/order/nosort" target="_blank">{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
+                {% elsif f.field == "location" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/{{ s | strip | url_param_escape }}/field/locati/mode/all/conn/and/order/nosort" target="_blank">{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
+                {% else %}{{ page[f.field] }}{% endif %}</span></p>
+                {% endif %}{% endfor %}
 
             </div>
         </div> 
-    </div>    
-
-    <div class="related">
-        <p>Related:</p>
-        <p>subjects, series, collection links</p>
     </div>
-
-    <div class="back-button">
-        <a href="{{ site.baseurl }}/browse/">❮ Back to IWDL Documents</a>
+    <div class="text-center">
+        <a class="btn btn-secondary" href="{{ "/browse/" | relative_url }}" role="button">❮ Back to IWDL Documents</a>
     </div>
 </div>
 
