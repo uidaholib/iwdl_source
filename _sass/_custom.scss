@@ -28,8 +28,12 @@ main {
         font-weight: 300;
         color: $text-color;
     }
+    h1 {
+        line-height: 1;
+    }
     p {
         font-size: 13.5px;
+        line-height: 1;
     }
  }
 /* nav bar */
