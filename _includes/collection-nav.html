@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-light ">
     <div class="container">
-        <a class="navbar-brand {% if page.url == "/" %} active{% endif %} p-0" href="{{ "/" | relative_url }}"><img src="{{ "/images/iwdl-logo.png" | relative_url }}" class="img-fluid" style="max-height:45px;"></a>
+        <a class="navbar-brand {% if page.url == "/" %} active{% endif %} p-0" href="{{ "/" | relative_url }}">
+            <img src="{{ "/images/iwdl-logo-t.png" | relative_url }}" class="img-fluid" style="max-height:45px;">
+            </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#page-nav" aria-controls="page-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,13 +26,17 @@
                 </li>
             </ul>
             <script>
-                function google_search() {
-                    var query = document.getElementById("google-search").value;
+                /*function google_search() {
+                    var query = document.getElementById("nav-search").value;
                     window.open("{{ '/search/index.html' | absolute_url }}?q=" + query, "_self" );
+                }*/
+                function cdm_search() {
+                    var query = document.getElementById("nav-search").value;
+                    window.open("https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/" + encodeURI(query) + "/field/all/mode/all/conn/and/order/title/ad/asc", "_blank" );
                 }
             </script>
-            <form class="form-inline my-2 my-lg-0" role="search" id="search" onsubmit="google_search(); return false;">
-                <input id="google-search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" role="search" id="search" onsubmit="cdm_search(); return false;">
+                <input id="nav-search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
