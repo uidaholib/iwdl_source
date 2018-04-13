@@ -5,8 +5,8 @@
 {%- capture subjects -%}{% for s in raw-subjects %}{% if s != "" %}{{ s | strip | downcase }};{% endif %}{%- endfor -%}{%- endcapture -%}
 {%- assign subjects = subjects | split: ";" -%}
 {%- assign uniqueSubjects = subjects | uniq | sort -%}
-subject,count
+subject,count,link
 {%- for unique in uniqueSubjects -%}
 {%- assign count = subjects | where_exp: "item", "item == unique" | size -%}
-"{{ unique  | capitalize }}",{{ count }}
+"{{ unique  | capitalize }}",{{ count }},"{{ unique | uri_escape | prepend: "https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/" | append: "/field/subjec/mode/all/conn/and/order/nosort" }}"
 {% endfor %}
