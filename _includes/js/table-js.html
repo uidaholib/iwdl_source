@@ -2,7 +2,7 @@
 <script>
     $(document).ready(function() {
         $('#item-table').DataTable( {
-            ajax: { url: '{{ "/data/iwdl-metadata.json" | relative_url }}', dataSrc: 'metadata' },
+            ajax: { url: '{{ "/data/iwdl-metadata.json" | relative_url }}', dataSrc: 'documents' },
             columns: [ { data: 'title' }, { data: 'date' }, { data: 'subjects' }, { data: 'description' }, { data: 'link' } ],
             columnDefs: [ 
                 { "render": function ( data, type, row ) { return '<a href="' + row.link +'">'+ data +'</a>'; },"targets": 0 },
