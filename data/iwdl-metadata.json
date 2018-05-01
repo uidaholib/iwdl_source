@@ -7,7 +7,7 @@
     {
         "title": {{ item.title | jsonify }},
         "date": {{ item.date | jsonify }},
-        "subjects": {{ item.subject | jsonify }},
+        "subjects": {{ item.subject | split: ";" | jsonify }},
         "description": {{ item.description | truncatewords: 20 | jsonify }},
         "link": {{ "/docs/" | absolute_url | append: item.resource-identifier | append: ".html" | jsonify }}
     }{% unless forloop.last %},{% endunless %}
