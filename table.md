@@ -1,7 +1,7 @@
 ---
 layout: table
 title: Browse Documents
-permalink: /browse/
+permalink: /browse2/
 ---
 
 ## Browse IWDL
