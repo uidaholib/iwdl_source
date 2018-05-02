@@ -25,6 +25,15 @@ iwdl/images/sm thumbs
 - set up datatables load data
 - datatables api 
 
+## extract full text
+
+Xpdf
+
+pdftotext
+-nopgbrk  don't create page break characters
+
+`for f in *.pdf; do pdftotext -nopgbrk "$f"; done`
+
 ## Thumbs
 
 CONTENTdm get thumb utility:
