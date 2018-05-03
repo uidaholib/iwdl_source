@@ -17,24 +17,27 @@ layout: page
 
 <div class="row" id="browse-items">
     {% for item in items %}
-    <div class="item col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" >
+    <div class="item col-xl-6 col-lg-6 col-md-12" >
         <!--
         <a href="{{ "/browse/item.html" | absolute_url | append: "?id=" | append: item.indexid }}">
             {% if forloop.index < 20 %}<img class="card-img-top lazy"  src="{{ site.baseurl }}/objects/thumbs/{{ item.indexid }}_sm.jpg" alt="Card image cap">
             {% else %}<img class="card-img-top lazy"  data-original="{{ site.baseurl }}/objects/thumbs/{{ item.indexid }}_sm.jpg" alt="Card image cap">{% endif %}
         </a>-->
-        <div class="card text-center" id="content">
-            <h3 class="card-title">{{ item.title }}</h3>
-            <p class="card-text"><strong>Date:</strong> {{ item.date }}</p>
-            <p>
+        <div class="card" id="content">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text"><strong>Date:</strong> {{ item.date }}<br>
+            <strong>Subject:</strong>
                 {% assign subjects = item.subject | split:';' %}
                 {% for subject in subjects %}{% if subject !=" " %}
-                <a class="btn btn-sm btn-secondary m-1" data-filter="{{ subject | trim }}" href="{{ subject | trim | uri_escape | prepend: "/browse/#" | relative_url }}">{{ subject }}</a> 
-                {% endif %}{% endfor %} 
+                <a class="" data-filter="{{ subject | trim }}" href="{{ subject | trim | uri_escape | prepend: "/browse/#" | relative_url }}">{{ subject }}</a>{% unless forloop.last %}; {% endunless %} 
+                {% endif %}{% endfor %}<br>
+            {% if item.location %}<strong>Location:</strong> {{ item.location }}.<br>{% endif %}
+            <strong>Abstract:</strong> {{ item.description | truncatewords: 25 }}<br>
+            {% if item.series %}<strong>Series:</strong> {{ item.series }}.<br>{% endif %}
+            {% if item.collection %}<strong>Collection:</strong> {{ item.collection }}.<br>{% endif %}
             </p>
-            <p class="card-text">{{item.description | truncatewords: 20}}</p>
             <p>
-                <a href="{{ "/docs/" | absolute_url | append: item.resource-identifier | append: ".html" }}" class="btn btn-info" title="link to {{ item.title }}">Go to Document</a>
+                <a href="{{ "/docs/" | absolute_url | append: item.resource-identifier | append: ".html" }}" class="btn btn-sm btn-info" title="link to {{ item.title }}">Go to Document</a>
             </p>
          </div>
     </div>

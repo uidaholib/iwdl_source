@@ -9,17 +9,17 @@
 
         <div class="collapse navbar-collapse" id="page-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item {% if page.url == "/browse/" %} active{% endif %}">
-                    <a class="nav-link" href="{{ "/browse/" | relative_url }}">Browse</a>
-                </li>
                 <li class="nav-item {% if page.url == "/data/" %} active{% endif %}">
                     <a class="nav-link" href="{{ "/data/" | relative_url }}">Documents</a>
                 </li>
-                <li class="nav-item {% if page.url == "/map/" %} active{% endif %}">
-                    <a class="nav-link" href="{{ "/map/" | relative_url }}">Map</a>
+                <li class="nav-item {% if page.url == "/browse/" %} active{% endif %}">
+                    <a class="nav-link" href="{{ "/browse/" | relative_url }}">Browse</a>
                 </li>
                 <li class="nav-item {% if page.url == "/subjects/" %} active{% endif %}">
                     <a class="nav-link" href="{{ "/subjects/" | relative_url }}">Subjects</a>
+                </li>
+                <li class="nav-item {% if page.url == "/map/" %} active{% endif %}">
+                    <a class="nav-link" href="{{ "/map/" | relative_url }}">Map</a>
                 </li>
                 <li class="nav-item {% if page.url == "/about/" %} active{% endif %}">
                     <a class="nav-link" href="{{ "/about/" | relative_url }}">About</a>
@@ -29,10 +29,6 @@
                 </li>
             </ul>
             <script>
-                /*function google_search() {
-                    var query = document.getElementById("nav-search").value;
-                    window.open("{{ '/search/index.html' | absolute_url }}?q=" + query, "_self" );
-                }*/
                 function cdm_search() {
                     var query = document.getElementById("nav-search").value;
                     window.open("https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/" + encodeURI(query) + "/field/all/mode/all/conn/and/order/title/ad/asc", "_blank" );
