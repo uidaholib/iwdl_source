@@ -8,5 +8,5 @@
 subject,count,link
 {%- for unique in uniqueSubjects -%}
 {%- assign count = subjects | where_exp: "item", "item == unique" | size -%}
-"{{ unique  | capitalize }}",{{ count }},"{{ unique | uri_escape | prepend: "https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/" | append: "/field/subjec/mode/all/conn/and/order/nosort" }}"
+"{{ unique  | capitalize }}",{{ count }},"{{ unique | uri_escape | prepend: "/browse/#" | absolute_url }}"
 {% endfor %}

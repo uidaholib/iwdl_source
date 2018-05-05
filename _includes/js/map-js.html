@@ -37,7 +37,7 @@
     L.geoJson(geodata, {
         pointToLayer: function(feature,latlng){
             var marker = L.marker(latlng);
-            marker.bindPopup('<h3>' + feature.properties.title + '</h3><p>Authors: '+ feature.properties.creator + '<br>Date: ' + feature.properties.date + '<br>Subjects: ' + feature.properties.subject + '<br>Identifier: ' + feature.properties.id + '</p><h4><a href="{{ site.baseurl }}/docs/'+feature.properties.id+'.html" >View Document</a><h4>');
+            marker.bindPopup('<h5>' + feature.properties.title + '</h5><p>Authors: '+ feature.properties.creator + '<br>Date: ' + feature.properties.date + '<br>Subjects: ' + feature.properties.subject + '<br>Identifier: ' + feature.properties.id + '</p><h5><a href="{{ site.baseurl }}/docs/'+feature.properties.id+'.html" >View Document</a><h5>');
             return marker;
         }, 
         onEachFeature: function (feature, layer) {

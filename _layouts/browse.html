@@ -29,7 +29,7 @@ layout: page
             <strong>Subject:</strong>
                 {% assign subjects = item.subject | split:';' %}
                 {% for subject in subjects %}{% if subject !=" " %}
-                <a class="" data-filter="{{ subject | trim }}" href="{{ subject | trim | uri_escape | prepend: "/browse/#" | relative_url }}">{{ subject }}</a>{% unless forloop.last %}; {% endunless %} 
+                <a class="" data-filter="{{ subject | strip }}" href="{{ subject | strip | uri_escape | prepend: "/browse/#" | relative_url }}">{{ subject }}</a>{% unless forloop.last %}; {% endunless %} 
                 {% endif %}{% endfor %}<br>
             {% if item.location %}<strong>Location:</strong> {{ item.location }}.<br>{% endif %}
             <strong>Abstract:</strong> {{ item.description | truncatewords: 25 }}<br>

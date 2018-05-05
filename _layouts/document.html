@@ -23,7 +23,7 @@ layout: default
 <div class="container">
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ "/" | absolute_url }}">IWDL</a></li>
-        <li class="breadcrumb-item"><a href="{{ "/browse/" | absolute_url }}">Documents</a></li>
+        <li class="breadcrumb-item"><a href="{{ "/data/" | absolute_url }}">Documents</a></li>
         <li class="breadcrumb-item active">{{ page.title  }}</li>
     </ul>
 
@@ -48,10 +48,10 @@ layout: default
                 <tr>
                 <th class="field">{{ f.display-name }}:</th>
                 <td class="field-value">
-                {% if f.field == "subject" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/{{ s | strip | url_param_escape }}/field/subjec/mode/all/conn/and/order/nosort" target="_blank">{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
-                {% elsif f.field == "collection" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/{{ s | strip | url_param_escape }}/field/collec/mode/all/conn/and/order/nosort" target="_blank">{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
-                {% elsif f.field == "series" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/{{ s | strip | url_param_escape }}/field/series/mode/all/conn/and/order/nosort" target="_blank">{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
-                {% elsif f.field == "location" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="https://digital.lib.uidaho.edu/cdm/search/collection/idahowater/searchterm/{{ s | strip | url_param_escape }}/field/locati/mode/all/conn/and/order/nosort" target="_blank">{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
+                {% if f.field == "subject" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="{{ s | strip | uri_escape | prepend: "/browse/#" | absolute_url }}" >{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
+                {% elsif f.field == "collection" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="{{ s | strip | uri_escape | prepend: "/browse/#" | absolute_url }}" >{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
+                {% elsif f.field == "series" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="{{ s | strip | uri_escape | prepend: "/browse/#" | absolute_url }}" >{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
+                {% elsif f.field == "location" %}{% assign sub = page[f.field] | split: ";" %}{% for s in sub %}<a href="{{ s | strip | uri_escape | prepend: "/browse/#" | absolute_url }}" >{{ s | strip }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}
                 {% else %}{{ page[f.field] }}{% endif %}
                 </td>
                 </tr>
