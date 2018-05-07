@@ -45,6 +45,8 @@ The basic frame work is created using [Bootstrap](https://getbootstrap.com/) and
 Metadata visualizations are created using [DataTables](https://datatables.net/) and [Leafletjs](http://leafletjs.com/).
 Document metadata is exposed using [Schema.org](http://schema.org) and [Open Graph protocol](http://ogp.me/) standards.
 
+Last build date: {{ site.time | date: "%Y-%m-%d" }}
+
 </div></div>
 <div class="col-md-4">
 <div class="card">
