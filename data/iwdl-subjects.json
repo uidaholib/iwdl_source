@@ -1,7 +1,6 @@
 ---
 # find and count unique subjects
 ---
-{%- assign min-count = 2 -%}
 {%- assign raw-subjects = site.data[site.metadata] | map: "subject" | join: ";" | split: ";" -%}
 {%- capture subjects -%}{% for s in raw-subjects %}{% if s != "" %}{{ s | strip | downcase }};{% endif %}{%- endfor -%}{%- endcapture -%}
 {%- assign subjects = subjects | split: ";" -%}

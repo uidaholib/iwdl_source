@@ -1,0 +1,12 @@
+---
+---
+{%- comment -%} find all unique series used in the metadata {%- endcomment -%}
+{%- assign raw-series = site.data[site.metadata] | map: "series" | join: ";" | split: ";" -%}
+{%- capture series -%}{% for s in raw-series %}{% if s != "" %}{{ s | strip }};{% endif %}{%- endfor -%}{%- endcapture -%}
+{%- assign series = series | split: ";" -%}
+{%- assign uniqueSeries = series | uniq | sort -%}
+series,count
+{% for unique in uniqueSeries %}
+{%- assign count = series | where_exp: "item", "item == unique" | size -%}
+"{{ unique }}",{{ count }}
+{% endfor %}
