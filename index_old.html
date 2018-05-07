@@ -1,0 +1,56 @@
+---
+layout: page
+title: Home
+---
+<div class="container">
+    <h2 class="display-4">{{ site.title }}</h2> 
+    <div class="row">
+        <div class="col-md-8">   
+            <p>The Idaho Waters Digital Library provides open digital access to unique information resources relating to water issues in key Idaho river basins.</p>
+            <p>The collection includes scientific and technical reports, with an emphasis on <a href="http://www.uidaho.edu/research/entities/iwrri" target="_blank">Idaho Water Resources Research Institute</a> publications. Documents can be browsed by <a href="{{ "/map/" | relative_url }}" target="_blank">Location</a>, <a href="{{ "/timeline/" | relative_url }}" target="_blank">Date</a>, and <a href="{{ "/subjects/" | relative_url }}" target="_blank">Subject Term</a>. The database can also be queried extensively using the <a href="{{ "/browse/" | relative_url }}" target="_blank">Table</a> feature.</p>
+            <p>This project would not have been possible without the grant support of the United States Geological Survey and the Idaho Water Resources Research Institute, the metadata and digitization work of Warren Bromley-Vogel and Karen Trebitz, and the ground work and continuing efforts of Jodi Haire.</p>
+        </div>
+        <div class="col-md-4">
+            <p><img class="img-fluid rounded" src="{{ "/images/pinecreek.jpg" | relative_url }}" alt="Pine Creek"></p>
+            <!--<p class="text-center"><a class="btn btn-primary" href="{{ "/about/" | absolute_url }}" role="button">Learn more &raquo;</a></p>-->
+        </div>
+    </div>
+</div>
+{%- assign items = site.data[site.metadata] -%}
+{%- assign raw-dates = items | map: 'date' -%}
+{% capture clean-dates %}{% for date in raw-dates %}{% if date != "" %}{% if date contains "-" %}{{date | split: "-" | first }}{% elsif date contains "/" %}{{ date | split: "/" | last }}{% else %}{{ date }}{% endif %}{% unless forloop.last %};{% endunless %}{% endif %}{%- endfor -%}{% endcapture %}
+{%- assign date-range = clean-dates | split: ";" | sort  -%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">  
+            <div class="">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Collection Basics</h3>
+                        <p>IWDL currently contains {{ items | size }} documents in PDF format, ranging in date from {{ date-range | first }} to {{ date-range | last }}. </p>
+                        <p><a class="btn btn-secondary" href="{{ "/about/" | absolute_url }}" role="button">Learn more &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Data</h3>
+                        <p>The full descriptive metadata can be downloaded as a <a href="{{ "/data/iwdl-metadata.csv" | absolute_url }}" target="_blank">CSV spreadsheet</a>, <a href="{{ "/data/iwdl-metadata.json" | absolute_url }}" target="_blank">JSON</a>, or a <a href="{{ "/data/iwdl-geodata.json" | absolute_url }}" target="_blank">GeoJSON</a> export. The data can be subsetted and downloaded as CSV or Excel from the <a href="{{ "/browse/" | relative_url }}" >browse table</a>. The collection is also included in aggregators such as the <a href="http://westernwaters.org/" target="_blank">Western Waters Digital Library</a>.</p>
+                        <p><a class="btn btn-secondary" href="{{ "/browse/" | relative_url }}" role="button">Browse &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Locations</h3>
+                    <p class="text-center"><a href="{{ "/map/" | relative_url }}"><img class="img-fluid rounded" src="{{ "/images/iwdl-map.jpg" | relative_url }}" alt="IWDL map"></a></p>
+                    <!--<p><a class="btn btn-secondary" href="{{ "/map/" | relative_url }}" role="button">Locations &raquo;</a></p>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

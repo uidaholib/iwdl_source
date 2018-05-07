@@ -11,8 +11,8 @@ permalink: /about/
 # About {{ site.title }}
 
 The Idaho Waters Digital Library (IWDL) provides open digital access to unique information resources relating to water issues in key Idaho river basins.
-Making up the core of the collection are more than 700 documents produced by [Idaho Water Resources Research Institute](http://www.uidaho.edu/research/entities/iwrri) (IWRRI) researchers between 1980 and 2012, digitized by University of Idaho Library.
-IWDL supports ongoing research and understanding of our region while preserving an era of previous work and research investment.
+Making up the core of the collection are more than 700 scientific and technical reports produced by [Idaho Water Resources Research Institute](http://www.uidaho.edu/research/entities/iwrri) (IWRRI) researchers between 1980 and 2012, digitized by University of Idaho Library.
+IWDL supports ongoing research and understanding of the region while preserving an era of previous work and research investment.
 
 ### Background
 
@@ -26,6 +26,11 @@ This funding helped solidify the IWDL, supporting a wealth of content and techni
 
 More than 700 documents are currently accessible, ranging in date from 1897 to 2016 and representing over 550 critical subject areas, such as mine wastes, water policy, hydroelectric power, and aquifer management. 
 IWDL serves as a central repository to facilitate research on Idaho watersheds, enabling better discovery, access, and dissemination, while ensuring digital preservation of the materials.  
+
+### Data
+
+The full descriptive metadata can be downloaded as a <a href="{{ "/data/iwdl-metadata.csv" | absolute_url }}" target="_blank">CSV spreadsheet</a>, <a href="{{ "/data/iwdl-metadata.json" | absolute_url }}" target="_blank">JSON</a>, or a <a href="{{ "/data/iwdl-geodata.json" | absolute_url }}" target="_blank">GeoJSON</a> export.
+The data can be subsetted and downloaded as CSV or Excel from the <a href="{{ "/browse/" | relative_url }}" >documents table</a>.
 
 ### WWDL
 
