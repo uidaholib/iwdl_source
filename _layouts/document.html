@@ -10,19 +10,15 @@ layout: default
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ "/" | absolute_url }}">IWDL</a></li>
         <li class="breadcrumb-item"><a href="{{ "/data/" | absolute_url }}">Documents</a></li>
-        <li class="breadcrumb-item active">{{ page.title  }}</li>
+        <li class="breadcrumb-item active">{{ page.title | truncatewords: 10 }}</li>
     </ul>
-
-    <div class="">
-
-    </div>
 
     <div class="row">
         <div class="col-md-4" >
             <div id="item-image">
                 <img src="https://www.lib.uidaho.edu/digital/iwdl/images/sm/{{ page.resource-identifier }}.jpg" alt="pdf thumbnail" class="img-thumbnail">
             </div>
-            <div id="item-link" class="text-center mt-2">
+            <div id="item-link" class="text-center my-2">
                 <a href="https://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/{{ page.cdm-number }}/filename/{{ page.resource-identifier }}.pdf" target="_blank" class="btn btn-primary" title="PDF download">Download PDF</a>
             </div>
         </div>
