@@ -38,7 +38,7 @@ title: Home
             <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Top Subjects</h5>
-                    {%- assign topSubjects = "Computer models; Aquifers; Water quality; Heavy metals; Groundwater; Irrigation; Mine wastes; Hydroelectric power; Hydrogeology; Groundwater flow; Water management; Water pollution; Water resources development; Water supply; Benthos; Computer simulation; Groundwater recharge; Water budget; Irrigation efficiency" | split: "; " -%}
+                    {%- assign topSubjects = "Computer models; Aquifers; Water quality; Heavy metals; Groundwater; Irrigation; Mine wastes; Hydroelectric power; Hydrogeology; Groundwater flow; Water management; Water pollution; Water resources development; Water supply; Benthos; Computer simulation" | split: "; " -%}
                     <p class="card-text">
                         {% for s in topSubjects %}
                         <a class="btn btn-sm btn-info m-1" href="{{ s | uri_escape | prepend: '/browse/#' | absolute_url }}">{{ s }}</a>{% endfor %}
@@ -73,7 +73,7 @@ title: Home
                         </div>
                         <div class="col-md-4">
                             {%- assign topLocations = "Southern Idaho; Snake Plain Aquifer; Moscow; Coeur d'Alene; Snake River; Southeastern Idaho; Northern Idaho; Palouse; Boise; Salmon River; Clearwater River; Bear River; Pullman" | split: "; " -%}
-                            {% for l in topLocations %}<a class="btn btn-sm btn-light m-1" href="{{ l | uri_escape | prepend: '/browse/#' | absolute_url }}">{{ l }}</a><br>
+                            {% for l in topLocations %}<a class="btn btn-sm btn-outline-secondary m-1" href="{{ l | uri_escape | prepend: '/browse/#' | absolute_url }}">{{ l }}</a><br>
                             {% endfor %}
                         </div>
                     </div>
