@@ -7,13 +7,14 @@ title: Home
 {% capture clean-dates %}{% for date in raw-dates %}{% if date != "" %}{% if date contains "-" %}{{date | split: "-" | first }}{% elsif date contains "/" %}{{ date | split: "/" | last }}{% else %}{{ date }}{% endif %}{% unless forloop.last %};{% endunless %}{% endif %}{%- endfor -%}{% endcapture %}
 {%- assign date-range = clean-dates | split: ";" | sort  -%}
 <style>
-.jumbotron{
-    //background-image: url('{{ "/images/pinecreek.jpg" | relative_url }}');
-    //background-size: cover;
-    //background-repeat: no-repeat;
+.feature {
+    background-image: url('{{ "/images/ian-keefe-354195-unsplash.jpg" | relative_url }}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
 }
 </style>
-<div class="jumbotron">
+<div class="jumbotron feature">
     <h2 class="display-4">{{ site.title }}</h2>
     <p>The Idaho Waters Digital Library provides open digital access to unique information resources relating to water issues in key Idaho river basins.</p>
 </div>
