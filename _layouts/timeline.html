@@ -8,19 +8,33 @@ layout: page
 {% assign raw-dates = site.data[site.metadata] | map: 'date' | compact %}
 {% capture clean-years %}{% for date in raw-dates %}{% if date contains "-" %}{{date | split: "-" | first }}{% elsif date contains "/" %}{{ date | split: "/" | last }}{% else %}{{ date }}{% endif %}{% unless forloop.last %};{% endunless %}{%- endfor -%}{% endcapture %}
 {%- assign years = clean-years | split: ";" | sort -%}
-{%- assign uniqueDates = years | uniq | sort -%}
+{%- assign uniqueYears = years | uniq | sort -%}
+{%- assign navYears = "1960;1970;1980;1990;2000;2010" | split: ";" -%}
+<style>
+.img-thumbnail { height: 200px; }
+</style>
+
+<ul class="nav nav-pills float-right" id="year-nav">
+  <li class="nav-item dropdown">
+    <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Year</a>
+    <div class="dropdown-menu">
+      {% for y in navYears %}
+      <a class="dropdown-item" href="#{{ y }}">{{ y }}</a>{% endfor %}
+    </div>
+  </li>
+</ul>
 
 <p>Browse all IWDL documents from <a href="#{{ years | first }}">{{ years | first }}</a> to <a href="#{{ years | last }}">{{ years | last }}</a></p>
 
-<table class="table table-striped">
-  {%for date in uniqueDates %}
+<table id="timeline" class="table table-striped">
+  {% for date in uniqueYears %}
   <tr>
-    <th><h3 id="{{date}}">{{date}}</h2></th>
+    <th><h3 id="{{date}}">{{ date }}</h2></th>
     <td>
-    {%for item in items %}{% if item.date contains date %}
-    <a href="{{ "/docs/" | absolute_url | append: item.resource-identifier | append: ".html" }}" ><img class="lazy" data-original="https://www.lib.uidaho.edu/digital/iwdl/images/thumb/{{ item.resource-identifier }}.jpg" style="margin:10px;" alt="{{ item.title }}"  title="{{ item.title }} | {{ item.date }}"/></a>
-    {% endif %}{%endfor%}
+    {% for item in items %}{% if item.date contains date %}
+    <a href="{{ "/docs/" | absolute_url | append: item.resource-identifier | append: ".html" }}" ><img class="lazy img-thumbnail m-1" data-original="https://www.lib.uidaho.edu/digital/iwdl/images/thumb/{{ item.resource-identifier }}.jpg" alt="{{ item.title }}" data-toggle="tooltip" data-placement="bottom" title="{{ item.title }} | {{ item.date }}"></a>
+    {% endif %}{% endfor %}
     </td>
   </tr>
-  {%endfor%}
+  {% endfor %}
 </table>
