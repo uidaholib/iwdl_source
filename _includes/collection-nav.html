@@ -12,14 +12,14 @@
                 <li class="nav-item {% if page.url == "/data/" or page.url contains "/docs/" %} active{% endif %}">
                     <a class="nav-link" href="{{ "/data/" | relative_url }}">Documents</a>
                 </li>
+                <li class="nav-item {% if page.url == "/map/" %} active{% endif %}">
+                    <a class="nav-link" href="{{ "/map/" | relative_url }}">Map</a>
+                </li>                
                 <li class="nav-item {% if page.url == "/browse/" %} active{% endif %}">
                     <a class="nav-link" href="{{ "/browse/" | relative_url }}">Browse</a>
                 </li>
                 <li class="nav-item {% if page.url == "/subjects/" %} active{% endif %}">
                     <a class="nav-link" href="{{ "/subjects/" | relative_url }}">Subjects</a>
-                </li>
-                <li class="nav-item {% if page.url == "/map/" %} active{% endif %}">
-                    <a class="nav-link" href="{{ "/map/" | relative_url }}">Map</a>
                 </li>
                 <li class="nav-item {% if page.url == "/timeline/" %} active{% endif %}">
                     <a class="nav-link" href="{{ "/timeline/" | relative_url }}">Timeline</a>

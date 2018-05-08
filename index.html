@@ -11,10 +11,10 @@ title: Home
     background-image: url('{{ "/images/ian-keefe-354195-unsplash.jpg" | relative_url }}');
     background-size: cover;
     background-repeat: no-repeat;
-    color: white;
+    //color: white;
 }
 </style>
-<div class="jumbotron feature">
+<div class="jumbotron feature text-white">
     <h2 class="display-4">{{ site.title }}</h2>
     <p>The Idaho Waters Digital Library provides open digital access to unique information resources relating to water issues in key Idaho river basins.</p>
 </div>
@@ -69,11 +69,11 @@ title: Home
                     <h5 class="card-title">Locations</h5>
                     <div class="row">
                         <div class="col-md-8">
-                            <p class="card-text text-center"><a href="{{ "/map/" | relative_url }}"><img class="img-fluid rounded" src="{{ "/images/iwdl-map.jpg" | relative_url }}" alt="IWDL map"></a></p>
+                            <p class="card-text text-center"><a href="{{ "/map/" | relative_url }}" title="IWDL map"><img class="img-fluid rounded" src="{{ "/images/iwdl-map.jpg" | relative_url }}" alt="IWDL map"></a></p>
                         </div>
                         <div class="col-md-4">
-                            {%- assign topLocations = "Southern Idaho; Snake Plain Aquifer; Moscow; Coeur d'Alene; Snake River; Southeastern Idaho; Northern Idaho; Palouse; Boise; Salmon River; Clearwater River; Bear River; Pullman; Columbia Basalt; Spokane River" | split: "; " -%}
-                            {% for l in topLocations %}<a class="btn btn-sm btn-light m-1" href="{{ l | uri_escape | prepend: '/browse/#' | absolute_url }}">{{ l }}</a>
+                            {%- assign topLocations = "Southern Idaho; Snake Plain Aquifer; Moscow; Coeur d'Alene; Snake River; Southeastern Idaho; Northern Idaho; Palouse; Boise; Salmon River; Clearwater River; Bear River; Pullman" | split: "; " -%}
+                            {% for l in topLocations %}<a class="btn btn-sm btn-light m-1" href="{{ l | uri_escape | prepend: '/browse/#' | absolute_url }}">{{ l }}</a><br>
                             {% endfor %}
                         </div>
                     </div>

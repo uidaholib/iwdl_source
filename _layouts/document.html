@@ -3,20 +3,6 @@ layout: default
 ---
 {%- assign fields = site.data.metadata-fields -%}
 
-<style>
-    #item-image img { width: 100%;}
-    /* 
-    .metadata { font-size: 18px; }
-    .metadata p { 
-        border-top: 1px solid #ddd;
-        margin-top: 5px;
-    }
-    .field {
-        font-weight: bold;
-    }
-    .field-value { }*/
-</style>
-
 <div class="py-3">
 <div class="container py-3 rounded">
 
@@ -34,7 +20,7 @@ layout: default
     <div class="row">
         <div class="col-md-4" >
             <div id="item-image">
-                <img src="https://www.lib.uidaho.edu/digital/iwdl/images/sm/{{ page.resource-identifier }}.jpg" alt="pdf thumbnail" class="img-thumbnail img-responsive">
+                <img src="https://www.lib.uidaho.edu/digital/iwdl/images/sm/{{ page.resource-identifier }}.jpg" alt="pdf thumbnail" class="img-thumbnail">
             </div>
             <div id="item-link" class="text-center mt-2">
                 <a href="https://digital.lib.uidaho.edu/utils/getfile/collection/idahowater/id/{{ page.cdm-number }}/filename/{{ page.resource-identifier }}.pdf" target="_blank" class="btn btn-primary" title="PDF download">Download PDF</a>
@@ -61,7 +47,7 @@ layout: default
         </div> 
     </div>
     <div class="text-center">
-        <a class="btn btn-secondary" href="{{ "/browse/" | relative_url }}" role="button">&laquo; Back to IWDL Documents</a>
+        <a class="btn btn-secondary" href="{{ "/data/" | relative_url }}" role="button">&laquo; Back to IWDL Documents</a>
     </div>
 </div>
 
