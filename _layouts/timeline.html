@@ -1,7 +1,6 @@
 ---
 layout: page
 ---
-{{ content }}
 
 {% assign items = site.data[site.metadata] %}
 
@@ -10,19 +9,17 @@ layout: page
 {%- assign years = clean-years | split: ";" | sort -%}
 {%- assign uniqueYears = years | uniq | sort -%}
 {%- assign navYears = "1960;1970;1980;1990;2000;2010" | split: ";" -%}
-<style>
-.img-thumbnail { height: 200px; }
-</style>
+<style> .img-thumbnail { height: 200px; } </style>
 
-<ul class="nav nav-pills float-right" id="year-nav">
-  <li class="nav-item dropdown">
-    <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Year</a>
-    <div class="dropdown-menu">
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle float-right" type="button" id="year-nav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jump to Year</button>
+    <div class="dropdown-menu" aria-labelledby="year-nav">
       {% for y in navYears %}
       <a class="dropdown-item" href="#{{ y }}">{{ y }}</a>{% endfor %}
     </div>
-  </li>
-</ul>
+</div>
+
+{{ content }}
 
 <p>Browse all IWDL documents from <a href="#{{ years | first }}">{{ years | first }}</a> to <a href="#{{ years | last }}">{{ years | last }}</a></p>
 
