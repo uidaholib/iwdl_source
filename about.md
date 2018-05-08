@@ -32,10 +32,10 @@ IWDL serves as a central repository to facilitate research on Idaho watersheds, 
 The full descriptive metadata can be downloaded as a <a href="{{ "/data/iwdl-metadata.csv" | absolute_url }}" target="_blank">CSV spreadsheet</a>, <a href="{{ "/data/iwdl-metadata.json" | absolute_url }}" target="_blank">JSON</a>, or a <a href="{{ "/data/iwdl-geodata.json" | absolute_url }}" target="_blank">GeoJSON</a> export.
 The data can be subsetted and downloaded as CSV or Excel from the <a href="{{ "/browse/" | relative_url }}" >documents table</a>.
 
-### WWDL
+### Western Waters Digital Library
 
-The value of IWDL was recognized by selection for inclusion in the [Western Waters Digital Library](http://westernwaters.org/), which aggregates “digital collections of significant primary and secondary resources on water in the Western United States”. 
-WWDL aggregates unique materials related to water resources in the Western US improving and simplifying discovery for a diverse group of stakeholders. 
+The value of IWDL was recognized by selection for inclusion in the [Western Waters Digital Library](http://westernwaters.org/) (WWDL), which aggregates “digital collections of significant primary and secondary resources on water in the Western United States”. 
+WWDL collects information about unique materials related to water resources in the Western US improving and simplifying discovery for a diverse group of stakeholders. 
 However, it does not build collections or digitize materials. 
 WWDL and other aggregators rely on quality regional collections, such as IWDL, [New Mexico Waters](http://econtent.unm.edu/cdm/landingpage/collection/NMWaters), or [California Water Documents](http://ccdl.libraries.claremont.edu/cdm/landingpage/collection/cwd), to provide the content necessary for researchers.
 
@@ -50,17 +50,17 @@ The basic frame work is created using [Bootstrap](https://getbootstrap.com/) and
 Metadata visualizations are created using [DataTables](https://datatables.net/) and [Leafletjs](http://leafletjs.com/).
 Document metadata is exposed using [Schema.org](http://schema.org) and [Open Graph protocol](http://ogp.me/) standards.
 
-Last build date: {{ site.time | date: "%Y-%m-%d" }}
+> Last build date: {{ site.time | date: "%Y-%m-%d" }}
 
 </div></div>
 <div class="col-md-4">
 <div class="card">
 <div class="card-header">Supporters</div>
 <div class="card-body p-md-3">
-<p class="text-center"><a href="https://www.lib.uidaho.edu/"><img class="img-fluid rounded" src="{{ "/images/UI_Library_horizontal_4c.png" | relative_url }}" alt="UIdaho Library Logo"></a></p>
+<p class="text-center"><a href="http://www.uidaho.edu/research/entities/iwrri"><img class="img-fluid rounded" src="{{ "/images/ui-iwrri-logo.jpg" | relative_url }}" alt="IWRRI Logo" ></a></p>
 <p class="text-center"><a href="https://www.usgs.gov/"><img class="img-fluid rounded" src="{{ "/images/USGS_logo.png" | relative_url }}" alt="USGS Logo"></a></p>
-<p class="text-center"><a href="http://www.uidaho.edu/research/entities/iwrri"><img class="img-fluid rounded" src="{{ "/images/iwrri-logo.JPG" | relative_url }}" alt="IWRRI Logo" style="max-width: 50%;"></a></p>
 </div>
 </div>
+<p class="mt-3"><img class="img-fluid rounded" src="{{ "/images/pinecreek.jpg" | relative_url }}" alt="Pine Creek"></p>
 </div>
 </div>
