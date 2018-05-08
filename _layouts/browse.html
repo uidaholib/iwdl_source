@@ -2,10 +2,6 @@
 layout: page 
 ---
 {% assign items = site.data[site.metadata] %}
-<style>
-  .item{padding:10px;}
-  .card{padding:4px;}
-</style>
 
 <h2 class="text-center">
     <input type="text" id="quicksearch" placeholder=" Filter ... " > 
@@ -18,27 +14,24 @@ layout: page
 <div class="row" id="browse-items">
     {% for item in items %}
     <div class="item col-xl-6 col-lg-6 col-md-12" >
-        <!--
-        <a href="{{ "/browse/item.html" | absolute_url | append: "?id=" | append: item.indexid }}">
-            {% if forloop.index < 20 %}<img class="card-img-top lazy"  src="{{ site.baseurl }}/objects/thumbs/{{ item.indexid }}_sm.jpg" alt="Card image cap">
-            {% else %}<img class="card-img-top lazy"  data-original="{{ site.baseurl }}/objects/thumbs/{{ item.indexid }}_sm.jpg" alt="Card image cap">{% endif %}
-        </a>-->
-        <div class="card" id="content">
-            <h5 class="card-title">{{ item.title }}</h5>
-            <p class="card-text"><strong>Date:</strong> {{ item.date }}<br>
-            <strong>Subject:</strong>
-                {% assign subjects = item.subject | split:';' %}
-                {% for subject in subjects %}{% if subject !=" " %}
-                <a class="" data-filter="{{ subject | strip }}" href="{{ subject | strip | uri_escape | prepend: "/browse/#" | relative_url }}">{{ subject }}</a>{% unless forloop.last %}; {% endunless %} 
-                {% endif %}{% endfor %}<br>
-            {% if item.location %}<strong>Location:</strong> {{ item.location }}.<br>{% endif %}
-            <strong>Abstract:</strong> {{ item.description | truncatewords: 25 }}<br>
-            {% if item.series %}<strong>Series:</strong> {{ item.series }}.<br>{% endif %}
-            {% if item.collection %}<strong>Collection:</strong> {{ item.collection }}.<br>{% endif %}
-            </p>
-            <p>
+
+        <div class="card mb-2" id="content">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <hr>
+                <p class="card-text"><strong>Date:</strong> {{ item.date }}<br>
+                <strong>Subject:</strong>
+                    {% assign subjects = item.subject | split:';' %}
+                    {% for subject in subjects %}{% if subject !=" " %}
+                    <a class="" data-filter="{{ subject | strip }}" href="{{ subject | strip | uri_escape | prepend: "/browse/#" | relative_url }}">{{ subject }}</a>{% unless forloop.last %}; {% endunless %} 
+                    {% endif %}{% endfor %}<br>
+                {% if item.location %}<strong>Location:</strong> {{ item.location }}.<br>{% endif %}
+                <strong>Abstract:</strong> {{ item.description | truncatewords: 25 }}<br>
+                {% if item.series %}<strong>Series:</strong> {{ item.series }}.<br>{% endif %}
+                {% if item.collection %}<strong>Collection:</strong> {{ item.collection }}.<br>{% endif %}
+                </p>
                 <a href="{{ "/docs/" | absolute_url | append: item.resource-identifier | append: ".html" }}" class="btn btn-sm btn-info" title="link to {{ item.title }}">Go to Document</a>
-            </p>
+            </div>
          </div>
     </div>
     {% endfor %}

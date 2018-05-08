@@ -5,12 +5,22 @@ PDF problems
 iwdl-1897_russell_a_reconnoissance_in_southeastern_wa	*missing, bad digitization
 iwdl-1965_ross_contributions_to_geohydrology	*missing
 
-iwdl-gladwell6_1979.pdf	1
-iwdl-gladwell8_1979.pdf	1
-iwdl-gladwell10_1979	1
-iwdl-gladwell2_1979	1
-iwdl-gladwell7_1979	1
-iwdl-gladwell9_1979	1
+iwdl-gladwell2_1979	
+iwdl-gladwell6_1979.pdf	
+iwdl-gladwell7_1979	
+iwdl-gladwell8_1979.pdf	
+iwdl-gladwell9_1979	
+iwdl-gladwell10_1979
+
+no thumbs, 
+https://www.lib.uidaho.edu/digital/iwdl/images/thumb/iwdl-1897_russell_a_reconnoissance_in_southeastern_wa.jpg
+https://www.lib.uidaho.edu/digital/iwdl/images/thumb/iwdl-1965_ross_contributions_to_geohydrology.jpg
+https://www.lib.uidaho.edu/digital/iwdl/images/thumb/iwdl-gladwell2_1979.jpg
+https://www.lib.uidaho.edu/digital/iwdl/images/thumb/iwdl-gladwell6_1979.jpg
+https://www.lib.uidaho.edu/digital/iwdl/images/thumb/iwdl-gladwell7_1979.jpg
+https://www.lib.uidaho.edu/digital/iwdl/images/thumb/iwdl-gladwell10_1979.jpg
+https://www.lib.uidaho.edu/digital/iwdl/images/thumb/iwdl-gladwell8_1979.jpg
+https://www.lib.uidaho.edu/digital/iwdl/images/thumb/iwdl-gladwell9_1979.jpg
 
 ## notes 
 
