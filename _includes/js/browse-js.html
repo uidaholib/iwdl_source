@@ -1,5 +1,12 @@
 <script src="{{ "/assets/js/jquery.lazyload.js" | relative_url }}"></script>
 <script>
+  var $imgs = $("img.lazy");
+  // Lazy Load images when they appear in DOM
+  $imgs.lazyload({ 
+        effect: "fadeIn",
+        failure_limit: Math.max($imgs.length - 1, 0)
+  });
+
   function filterItems() {
     var input, filter, table, tr, td, i;
     input = document.getElementById("quicksearch");
@@ -19,13 +26,6 @@
     var numberofint = $('div.item:visible').length;
     $("#numberof").html(numberofint);
   }
-
-  var $imgs = $("img.lazy");
-  // Lazy Load images when they appear in DOM
-  $imgs.lazyload({ 
-        effect: "fadeIn",
-        failure_limit: Math.max($imgs.length - 1, 0)
-  });
 
   // filter items by entering value of button or link pushed into quicksearch box
   var filterit = function() {
