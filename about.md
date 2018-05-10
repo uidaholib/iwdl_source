@@ -11,7 +11,7 @@ permalink: /about/
 # About {{ site.title }}
 
 The Idaho Waters Digital Library (IWDL) provides open digital access to unique information resources relating to water issues in key Idaho river basins.
-Making up the core of the collection are more than 700 scientific and technical reports produced by [Idaho Water Resources Research Institute](http://www.uidaho.edu/research/entities/iwrri) (IWRRI) researchers between 1980 and 2012, digitized by University of Idaho Library.
+Making up the core of the collection are more than 700 scientific and technical reports produced by [Idaho Water Resources Research Institute](http://www.uidaho.edu/research/entities/iwrri) (IWRRI) researchers between 1963 and 2014, digitized by University of Idaho Library.
 IWDL supports ongoing research and understanding of the region while preserving an era of previous work and research investment.
 
 ### Background
