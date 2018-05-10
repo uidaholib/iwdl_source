@@ -29,7 +29,7 @@ layout: page
     <th><h3 id="{{date}}">{{ date }}</h2></th>
     <td>
     {% for item in items %}{% if item.date contains date %}
-    <a href="{{ "/docs/" | absolute_url | append: item.resource-identifier | append: ".html" }}" ><img class="lazy img-thumbnail m-1" data-original="https://www.lib.uidaho.edu/digital/iwdl/images/thumb/{{ item.resource-identifier }}.jpg" alt="{{ item.title }}" data-toggle="tooltip" data-placement="bottom" title="{{ item.title }} | {{ item.date }}"></a>
+    <a href="{{ "/docs/" | absolute_url | append: item.resource-identifier | append: ".html" }}" ><img class="lazy img-thumbnail m-1" data-original="https://www.lib.uidaho.edu/digital/iwdl/images/thumb/{{ item.resource-identifier }}.jpg" alt="{{ item.title }}" data-toggle="tooltip" data-placement="bottom" title="{{ item.title | replace: '"', '&#34;' }} | {{ item.date }}"></a>
     {% endif %}{% endfor %}
     </td>
   </tr>
