@@ -18,6 +18,9 @@ liburl: https://www.lib.uidaho.edu
 digurl: https://www.lib.uidaho.edu/digital
 repourl: https://digital.lib.uidaho.edu
 
+# url to the shared assets folder on Digital
+digital-assets: https://www.lib.uidaho.edu/assets
+
 # Dev variables: 
 # choose metadata set, i.e. easily switch between full or dev version
 # be sure to also change page_gen data setting!
@@ -36,3 +39,5 @@ page_gen:
 
 # data fields: 
 # title,creator,date,location,lat-long,subject,description,collection,series,related-dataset,contributors,publisher,contributing-institution,language,iwrri-number,resource-identifier,rights,rights-standardized,format,type,date-digital,digitization-specifications,metadata-cataloger,filename,cdm-number
+
+exclude: [docs/, 'Rakefile', README.md, LICENSE]
